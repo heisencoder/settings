@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=1000000
+HISTFILESIZE=2000000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -56,6 +56,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# NOTE: Setting PS1 here is irrelevant because it's overwritten later.
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -75,7 +76,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls --color=auto -A'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -111,4 +112,63 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# ----------------------------------------------------------------------------
+# Start of Matt's customizations
+
+# Add run time to your prompt.
+# See http://jakemccrary.com/blog/2015/05/03/put-the-last-commands-run-time-in-your-bash-prompt/
+function timer_start {
+  timer=${timer:-$SECONDS}
+}
+
+function timer_stop {
+  timer_show=$(($SECONDS - $timer))
+  unset timer
+}
+
+trap 'timer_start' DEBUG
+
+PROMPT_COMMAND="timer_stop"
+
+function __error_level {
+  echo $?
+}
+
+# Put the git repository into the prompt
+PS1='\[\e]0;\h: \w\a\]\n$(__error_level) ${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w [\D{%a} \t]\[\033[01;32m\]$(__git_ps1) ${timer_show}s\n\[\033[00m\]\$ '
+
+# Use colordiff if installed
+if hash colordiff 2>/dev/null; then
+  export DIFF='colordiff -u'
+else
+  export DIFF='diff -u'
+fi
+export EDITOR=vim
+
+alias diff="$DIFF"
+alias ack='ack-grep'
+alias cd1='cd ..'
+alias cd2='cd ../..'
+alias cd3='cd ../../..'
+alias cd4='cd ../../../..'
+alias cd5='cd ../../../../..'
+alias cd6='cd ../../../../../..'
+
+PATH=~/bin:$PATH
+
+# Search and replace within git
+# $1 = search string, $2 = replace string
+gitsed() {
+  echo "Before:"
+  git grep $1
+  git grep -lz $1 | xargs -0 -l sed -i -e "s/$1/$2/g"
+  echo "After:"
+  git grep $2
+}
+
+# Setup platform-specific environment
+if [ -f ~/settings/bashrc.`hostname -a` ]; then
+  source ~/settings/bashrc.`hostname -a`
 fi
