@@ -9,6 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# Use "Windows key" as the standard modifier
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -27,23 +28,36 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec /usr/bin/gnome-terminal
+bindsym $mod+Shift+i exec /usr/bin/terminator
+
+# Start a Chrome window
+bindsym $mod+Shift+u exec /usr/bin/google-chrome
+bindsym $mod+Control+Return exec /usr/bin/google-chrome --user-data-dir=.config/chrome-personal
+
+# Start an Eclipse window
+bindsym $mod+Shift+o exec /usr/bin/eclipse46
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
+bindsym Mod1+F4 kill
+
+# Disable focus following mouse
+focus_follows_mouse no
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+r exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -52,10 +66,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -64,7 +78,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+semicolon split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -87,7 +101,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -120,34 +134,105 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# Disable resize mode because it sucks
 # resize window (you can also use the mouse for that)
-mode "resize" {
+# mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+#        bindsym h resize shrink width 10 px or 10 ppt
+#        bindsym j resize grow height 10 px or 10 ppt
+#        bindsym k resize shrink height 10 px or 10 ppt
+#        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+#        bindsym Left resize shrink width 10 px or 10 ppt
+#        bindsym Down resize grow height 10 px or 10 ppt
+#        bindsym Up resize shrink height 10 px or 10 ppt
+#        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#}
 
-bindsym $mod+r mode "resize"
+#bindsym $mod+r mode "resize"
+
+# Matt's customizations to key bindings
+bindsym Mod1+Control+l exec "gnome-screensaver-command --lock"
+bindsym $mod+Control+semicolon exec "gnome-screensaver-command --lock"
+
+bindsym $mod+Control+h resize shrink width 100 px or 10 ppt
+bindsym $mod+Control+j resize grow height 160 px or 16 ppt
+bindsym $mod+Control+k resize shrink height 160 px or 16 ppt
+bindsym $mod+Control+l resize grow width 100 px or 10 ppt
+
+# Commands to adjust which monitor is active.  This is only good for laptop
+bindsym $mod+comma exec "xrandr --output eDP1 --off --output DP1 --auto"
+bindsym $mod+Control+comma exec "xrandr --output eDP1 --auto --output DP1 --mode 1920x1080"
+bindsym $mod+period exec "xrandr --output eDP1 --auto --output DP1 --off"
+# bindsym $mod+slash exec "xrandr --output LVDS1 --auto --right-of HDMI3"
+# This will automatically activate all monitors
+bindsym $mod+slash exec "xrandr --auto"
+
+# Hotkeys to autofocus a particular window type
+bindsym $mod+u [class="^google-chrome$" instance="^google-chrome$"] focus
+bindsym $mod+i [class="^Terminator$"] focus
+bindsym $mod+o [class="^Eclipse$" title="Eclipse"] focus
+# Hangouts:
+bindsym $mod+p [instance="crx_knipolnnllmklapflnccelgolnpehhpl"] focus
+# Cider:
+bindsym $mod+y [instance="crx_ngonkpkdjoolhafdighbcajopenkobdn"] focus
+
+# Don't focus new windows or allow current windows to steal focus.
+#no_focus [class="."]
+# Don't let Hangouts window steal focus or be floating
+no_focus [instance="crx_knipolnnllmklapflnccelgolnpehhpl"]
+for_window [instance="crx_knipolnnllmklapflnccelgolnpehhpl"] floating disable
+#focus_on_window_activation urgent
+focus_on_window_activation none
+
+# Hide window borders on edge of screen.
+hide_edge_borders both
+
+# Show marks on the right side of the window decoration.
+show_marks yes
+
+# RedShift
+bindsym $mod+n exec "redshift -O 6500k"
+bindsym $mod+m exec "redshift -O 2000k"
+
+# Remove titles from Chrome windows
+# Hint: Use xprop command to find class name for a window.
+# for_window [class="^google-chrome$"] border pixel 0
+# for_window [class="^chromium-browser$"] border pixel 0
+for_window [] border pixel 0
+
+# Lock the screen after 5 minutes of being idle:  (Note: This doesn't seem to work)
+exec xautolock -time 5 -locker screenlock
+
+# Enable compton, a compositing windows manager.  This requires having compton
+# installed (sudo apt-get install compton)
+# See http://unix.stackexchange.com/questions/136932/why-am-i-having-ghosting-and-tearing-with-the-i3-window-manager-paired-with-xcom
+exec --no-startup-id compton -CGb --backend glx --vsync opengl
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
 }
+
+# Run the gnome sounds applet for volume control
+# This is part of the gnome-control-center package
+# (This doesn't seem to work)
+exec --no-startup-id /usr/bin/gnome-sound-applet
+
+# Run the NetworkManager
+exec --no-startup-id nm-applet
+
+# Initial layout
+exec --no-startup-id "i3-msg 'workspace 7; append_layout ~/settings/i3/workspace-7.json'"
+exec --no-startup-id "i3-msg 'workspace 9; append_layout ~/settings/i3/workspace-9.json'"

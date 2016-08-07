@@ -20,3 +20,46 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+#============================================================================
+# Start of Matt's customizations
+
+# Change the window title of X terminals
+case ${TERM} in
+  xterm*|rxvt*|Eterm|aterm|kterm|gnome)
+    # Commenting out because it interferes with bashrc and doesn't seem to work.
+    #export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*} as ${USER}:${PWD/$HOME/~}\007"'
+    cd /google/src/cloud/mball
+    ;;
+  screen*)
+    #export PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
+    # Change directories to the tmux directory
+    g4d $(tmux display -p '#S')
+    ;;
+esac
+
+# Save the last command into the history file
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
+# Always append when saving history instead of overwriting the whole file.
+shopt -s histappend
+
+# run BASH in vi mode
+set -o vi
+
+if [ -n "$DISPLAY" ]; then
+  # Disable flow control (i.e., Ctrl-S and Ctrl-Q)
+  # Note: This causes startup issues.
+  # stty -ixon
+
+  # Disable the lower-power mode for the screensaver.  (It takes too long for the
+  # monitor to come out of lower-power mode, and I intend to manually turn the
+  # monitor off at night.)
+  xset -dpms
+
+  # Increase keyboard repeat rate to something reasonable
+  xset r rate 300 30
+fi
+
+# Indicate that we're done
+echo "Ran ~/.profile"
