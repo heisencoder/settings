@@ -39,8 +39,14 @@ bindsym $mod+Shift+i exec /usr/bin/terminator
 bindsym $mod+Shift+u exec /usr/bin/google-chrome
 bindsym $mod+Control+Return exec /usr/bin/google-chrome --user-data-dir=.config/chrome-personal
 
-# Start an Eclipse window
-bindsym $mod+Shift+o exec /usr/bin/eclipse46
+# Start a Secure Shell Window
+bindsym $mod+Shift+o exec /usr/bin/google-chrome --app-id=pnhechapfaindjhompbnflcldabbghjo
+
+# Start a Cider window
+bindsym $mod+Shift+y exec /usr/bin/google-chrome --app-id=ngonkpkdjoolhafdighbcajopenkobdn
+
+# Start a Hangouts window
+bindsym $mod+Shift+p exec /usr/bin/google-chrome --app-id=knipolnnllmklapflnccelgolnpehhpl
 
 # kill focused window
 bindsym $mod+q kill
@@ -184,7 +190,10 @@ bindsym $mod+slash exec "xrandr --auto"
 # Hotkeys to autofocus a particular window type
 bindsym $mod+u [instance="^google-chrome$"] focus
 bindsym $mod+i [class="^Terminator$"] focus
-bindsym $mod+o [class="^Eclipse$" title="Eclipse"] focus
+# Disable by default
+# bindsym $mod+o [class="^Eclipse$" title="Eclipse"] focus
+# Secure Shell Chrome App
+bindsym $mod+o [instance="crx_pnhechapfaindjhompbnflcldabbghjo"] focus
 # Hangouts:
 bindsym $mod+p [instance="crx_knipolnnllmklapflnccelgolnpehhpl"] focus
 # Cider:
