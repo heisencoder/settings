@@ -1,0 +1,8 @@
+# File: /usr/share/xsessions/cinnamon-i3.desktop
+[Desktop Entry]
+Name=Cinnamon + i3
+Comment=This session logs you into Cinnamon with the i3 WM
+Exec=cinnamon-session --session=cinnamon-i3
+TryExec=/usr/bin/cinnamon
+Icon=
+Type=Application

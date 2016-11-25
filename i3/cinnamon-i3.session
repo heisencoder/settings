@@ -1,0 +1,7 @@
+# File: /usr/share/cinnamon-session/sessions/cinnamon-i3.session
+[Cinnamon Session]
+Name=Cinnamon + i3
+RequiredComponents=cinnamon-settings-daemon;cinnamon-screensaver;nm-applet;cinnamon-killer-daemon;
+DesktopName=X-Cinnamon
+RequiredProviders=windowmanager;
+DefaultProvider-windowmanager=i3
