@@ -217,6 +217,16 @@ show_marks yes
 bindsym $mod+n exec "redshift -O 6500k"
 bindsym $mod+m exec "redshift -O 2000k"
 
+# Multimedia Keys
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -- -5% && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && killall -SIGUSR1 i3status
+# These require sudo apt-get install xbacklight
+bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/xbacklight -inc 20
+
+#-------------------------------------------------------------------------
 # Remove titles from Chrome windows
 # Hint: Use xprop command to find class name for a window.
 for_window [class="oogle-chrome$"] border pixel 0
@@ -240,7 +250,6 @@ bar {
 
 # Run the gnome sounds applet for volume control
 # This is part of the gnome-control-center package
-# (This doesn't seem to work)
 exec --no-startup-id /usr/bin/gnome-sound-applet
 
 # Run the NetworkManager
