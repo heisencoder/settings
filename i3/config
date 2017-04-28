@@ -233,8 +233,8 @@ for_window [class="oogle-chrome$"] border pixel 0
 for_window [class="hromium-browser$"] border pixel 0
 for_window [] border pixel 0
 
-# Lock the screen after 5 minutes of being idle:  (Note: This doesn't seem to work)
-exec xautolock -time 5 -locker screenlock
+# Lock the screen after 5 minutes of being idle:
+exec xautolock -time 5 -locker "gnome-screensaver-command --lock"
 
 # Enable compton, a compositing windows manager.  This requires having compton
 # installed (sudo apt-get install compton)
