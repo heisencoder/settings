@@ -171,8 +171,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #bindsym $mod+r mode "resize"
 
 # Matt's customizations to key bindings
-bindsym Mod1+Control+l exec "gnome-screensaver-command --lock"
-bindsym $mod+Control+semicolon exec "gnome-screensaver-command --lock"
+#bindsym Mod1+Control+l exec "cinnamon-screensaver-command --lock"
+bindsym $mod+Control+semicolon exec "i3lock -c 000000"
 
 bindsym $mod+Control+h resize shrink width 100 px or 10 ppt
 bindsym $mod+Control+j resize grow height 160 px or 16 ppt
@@ -234,7 +234,7 @@ for_window [class="hromium-browser$"] border pixel 0
 for_window [] border pixel 0
 
 # Lock the screen after several minutes of being idle:
-exec xautolock -detectsleep -time 20 -locker "gnome-screensaver-command --lock" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
+exec xautolock -detectsleep -time 20 -locker "i3lock -c 000000" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
 
 # Enable compton, a compositing windows manager.  This requires having compton
 # installed (sudo apt-get install compton)
