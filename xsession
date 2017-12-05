@@ -1,3 +1,3 @@
 #!/bin/sh
-xrandr --dpi 144
+xrandr --dpi 120
 exec i3
