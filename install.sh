@@ -1,4 +1,4 @@
-#!/bin/bash
+#/bin/bash
 # This script will setup a new home directory to point to ~/settings for overridden settings files
 SETTINGS=settings
 CONFIG_FILES='
@@ -9,6 +9,7 @@ CONFIG_FILES='
   inputrc
   profile
   vimrc
+  xsession
 '
 
 cd ~

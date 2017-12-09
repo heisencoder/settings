@@ -3,7 +3,10 @@
 set show-all-if-ambiguous on
 set editing-mode vi
 set keymap vi
-set -o vi
+
+# I was getting this error: "readline: ~/.inputrc: line 6: -o: unknown variable name"
+# set -o vi
+
 # set show-mode-in-prompt on
 
 $include /etc/inputrc
