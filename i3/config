@@ -215,7 +215,7 @@ show_marks yes
 
 # RedShift
 bindsym $mod+n exec "redshift -O 6500k"
-bindsym $mod+m exec "redshift -O 2000k"
+bindsym $mod+m exec "redshift -O 3500k"
 
 # Multimedia Keys
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && killall -SIGUSR1 i3status
