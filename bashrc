@@ -172,6 +172,8 @@ gitsed() {
 }
 
 # Setup platform-specific environment
-if [ -f ~/settings/bashrc.`hostname -a` ]; then
+if [ -f ~/.bashrc.`hostname -a` ]; then
+  source ~/.bashrc.`hostname -a`
+elif [ -f ~/settings/bashrc.`hostname -a` ]; then
   source ~/settings/bashrc.`hostname -a`
 fi
