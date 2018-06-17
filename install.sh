@@ -17,5 +17,7 @@ for f in $CONFIG_FILES; do
   if [ ! -e .$f ]; then
     echo "Linking $f"
     ln -s $SETTINGS/$f .$f
+  else
+    echo "File $f already exists"
   fi
 done
