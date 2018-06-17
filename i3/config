@@ -7,7 +7,7 @@
 
 # i3 config file (v4)
 #
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Use "Windows key" as the standard modifier
 set $mod Mod4
@@ -245,7 +245,6 @@ exec --no-startup-id compton -CGb --backend glx --vsync opengl
 # finds out, if available)
 bar {
         status_command i3status
-        # tray_output primary
 }
 
 # Run the gnome sounds applet for volume control
