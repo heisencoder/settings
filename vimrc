@@ -57,7 +57,7 @@ set autowrite
 
 " set mouse=a
 set nowrap
-colorscheme elflord
+" colorscheme elflord
 set number  " Display line numbers
 
 " Changes to change the color of the status bar in insert mode.
