@@ -48,6 +48,9 @@ bindsym $mod+Shift+y exec /usr/bin/google-chrome --app-id=ngonkpkdjoolhafdighbca
 # Start a Hangouts window
 #bindsym $mod+Shift+p exec /usr/bin/google-chrome --app-id=nckgahadagoaajjgafhacjanaoiihapd
 
+# Start a Tasks Window as an app
+bindsym $mod+Shift+t exec /usr/bin/google-chrome --app=https://mail.google.com/tasks/canvas
+
 # kill focused window
 bindsym $mod+q kill
 bindsym Mod1+F4 kill
@@ -198,6 +201,9 @@ bindsym $mod+o [class="^jetbrains-idea-ce$"] focus
 bindsym $mod+p [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] focus
 # Cider:
 bindsym $mod+y [instance="crx_ngonkpkdjoolhafdighbcajopenkobdn"] focus
+# Tasks:
+bindsym $mod+t [instance="mail.google.com__tasks_canvas"] focus
+
 
 # Don't focus new windows or allow current windows to steal focus.
 #no_focus [class="."]
@@ -246,7 +252,7 @@ exec xautolock -detectsleep -time 20 -locker "i3lock -c 000000" -notify 30 -noti
 # Enable compton, a compositing windows manager.  This requires having compton
 # installed (sudo apt-get install compton)
 # See http://unix.stackexchange.com/questions/136932/why-am-i-having-ghosting-and-tearing-with-the-i3-window-manager-paired-with-xcom
-exec --no-startup-id compton -CGb --backend glx --vsync opengl --inactive-dim 0.1
+exec --no-startup-id compton -CGb --backend glx --vsync opengl --inactive-dim 0.125
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
