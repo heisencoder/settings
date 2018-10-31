@@ -43,7 +43,7 @@ bindsym $mod+Control+Return exec /usr/bin/google-chrome --user-data-dir=.config/
 bindsym $mod+Shift+o exec /opt/intellij-ce-stable/bin/idea.sh
 
 # Start a Cider window
-bindsym $mod+Shift+y exec /usr/bin/google-chrome --app-id=ngonkpkdjoolhafdighbcajopenkobdn
+bindsym $mod+Shift+y exec /usr/bin/google-chrome --app=https://cider.corp.google.com/?chromeApp
 
 # Start a Hangouts window
 #bindsym $mod+Shift+p exec /usr/bin/google-chrome --app-id=nckgahadagoaajjgafhacjanaoiihapd
@@ -200,7 +200,7 @@ bindsym $mod+o [class="^jetbrains-idea-ce$"] focus
 # Hangouts:
 bindsym $mod+p [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] focus
 # Cider:
-bindsym $mod+y [instance="crx_ngonkpkdjoolhafdighbcajopenkobdn"] focus
+bindsym $mod+y [instance="cider.corp.google.com"] focus
 # Tasks:
 bindsym $mod+t [instance="mail.google.com__tasks_canvas"] focus
 
