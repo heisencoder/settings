@@ -1,0 +1,185 @@
+// vim:ts=4:sw=4:et
+{
+    // this is a manually added container to restore the vertical split
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+
+        {
+            // splith split container with 2 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.82,
+            "type": "con",
+            "nodes": [
+                {
+                    // tabbed split container with 2 children
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "layout": "tabbed",
+                    "percent": 0.5,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "normal",
+                            "current_border_width": 3,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 499,
+                               "width": 802,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "mball2: ~/settings/i3",
+                            "percent": 0.5,
+                            "swallows": [
+                               {
+                                  "class": "^Terminator$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "none",
+                            "current_border_width": 0,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 2137,
+                               "width": 1923,
+                               "x": 1918,
+                               "y": 41
+                            },
+                            "name": "Google Chrome",
+                            "percent": 0.5,
+                            "swallows": [
+                               {
+                                  "instance": "^google\\-chrome$"
+                               }
+                            ],
+                            "type": "con"
+                        }
+                    ]
+                },
+                {
+                    // tabbed split container with 2 children
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "layout": "tabbed",
+                    "percent": 0.5,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "none",
+                            "current_border_width": 0,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 1752,
+                               "width": 1923,
+                               "x": 1918,
+                               "y": 0
+                            },
+                            "name": "Google Chrome",
+                            "percent": 0.5,
+                            "swallows": [
+                               {
+                                  "instance": "^google\\-chrome$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "normal",
+                            "current_border_width": 3,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 1721,
+                               "width": 1913,
+                               "x": 1920,
+                               "y": 0
+                            },
+                            "name": "yeti-hg [~/IdeaProjects/yeti-hg] - /google/src/cloud/mball/yeti-hg/google3/lifescience/diabetes/insurance/plx/process_proto_logs.sql [.workspace] - IntelliJ IDEA",
+                            "percent": 0.5,
+                            "swallows": [
+                               {
+                                  "class": "^jetbrains\\-idea\\-ce$"
+                               }
+                            ],
+                            "type": "con"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            // splith split container with 3 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.18,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 0,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 386,
+                       "width": 1281,
+                       "x": 0,
+                       "y": 1749
+                    },
+                    "name": "Google Hangouts - mball@google.com",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                          "instance": "^crx_nckgahadagoaajjgafhacjanaoiihapd$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "normal",
+                    "current_border_width": 3,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 482,
+                       "width": 814,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "IPython: home/mball",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                          "class": "^Gnome\\-terminal$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 0,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 387,
+                       "width": 1282,
+                       "x": 1279,
+                       "y": 1749
+                    },
+                    "name": "Tasks",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                          "class": "^Google\\-chrome$",
+                          "instance": "^mail\\.google\\.com__tasks_canvas$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
