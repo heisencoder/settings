@@ -46,7 +46,7 @@ bindsym $mod+Shift+o exec /opt/intellij-ce-stable/bin/idea.sh
 bindsym $mod+Shift+y exec /usr/bin/google-chrome --app=https://cider.corp.google.com/?chromeApp
 
 # Start a Hangouts window
-#bindsym $mod+Shift+p exec /usr/bin/google-chrome --app-id=nckgahadagoaajjgafhacjanaoiihapd
+bindsym $mod+Shift+p exec /usr/bin/google-chrome --app=https://chat.google.com
 
 # Start a Tasks Window as an app
 bindsym $mod+Shift+t exec /usr/bin/google-chrome --app=https://mail.google.com/tasks/canvas
@@ -198,7 +198,7 @@ bindsym $mod+o [class="^jetbrains-idea-ce$"] focus
 # Secure Shell Chrome App
 #bindsym $mod+o [instance="crx_pnhechapfaindjhompbnflcldabbghjo"] focus
 # Hangouts:
-bindsym $mod+p [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] focus
+bindsym $mod+p [instance="chat.google.com"] focus
 # Cider:
 bindsym $mod+y [instance="cider.corp.google.com"] focus
 # Tasks:
@@ -208,8 +208,8 @@ bindsym $mod+t [instance="mail.google.com__tasks_canvas"] focus
 # Don't focus new windows or allow current windows to steal focus.
 #no_focus [class="."]
 # Don't let Hangouts window steal focus or be floating
-no_focus [instance="crx_knipolnnllmklapflnccelgolnpehhpl"]
-for_window [instance="crx_knipolnnllmklapflnccelgolnpehhpl"] floating disable
+no_focus [instance="chat.google.com"]
+for_window [instance="chat.google.com"] floating disable
 #focus_on_window_activation urgent
 focus_on_window_activation none
 
