@@ -247,9 +247,9 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 #-------------------------------------------------------------------------
 # Remove titles from Chrome windows
 # Hint: Use xprop command to find class name for a window.
-for_window [class="oogle-chrome$"] border pixel 0
-for_window [class="hromium-browser$"] border pixel 0
-for_window [] border pixel 0
+# for_window [class="oogle-chrome$"] border pixel 1
+# for_window [class="hromium-browser$"] border pixel 0
+for_window [class="."] border pixel 1  # Remove all titles from all windows in non-tabbed views
 
 # Lock the screen after several minutes of being idle:
 exec xautolock -detectsleep -time 20 -locker "i3lock -c 000000" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
