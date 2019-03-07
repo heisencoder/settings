@@ -88,25 +88,6 @@
                                }
                             ],
                             "type": "con"
-                        },
-                        {
-                            "border": "normal",
-                            "current_border_width": 3,
-                            "floating": "auto_off",
-                            "geometry": {
-                               "height": 1721,
-                               "width": 1913,
-                               "x": 1920,
-                               "y": 0
-                            },
-                            "name": "yeti-hg [~/IdeaProjects/yeti-hg] - /google/src/cloud/mball/yeti-hg/google3/lifescience/diabetes/insurance/plx/process_proto_logs.sql [.workspace] - IntelliJ IDEA",
-                            "percent": 0.5,
-                            "swallows": [
-                               {
-                                  "class": "^jetbrains\\-idea\\-ce$"
-                               }
-                            ],
-                            "type": "con"
                         }
                     ]
                 }
