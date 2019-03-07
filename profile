@@ -59,5 +59,8 @@ if [ -n "$DISPLAY" ]; then
   xset r rate 300 30
 fi
 
+# Enable directory expansion via ** operator
+shopt -s globstar
+
 # Indicate that we're done
 echo "Ran ~/.profile"
