@@ -6,6 +6,7 @@ CONFIG_FILES='
   bashrc
   i3
   i3status.conf
+  imwheel
   inputrc
   profile
   vimrc
