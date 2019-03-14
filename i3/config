@@ -7,7 +7,7 @@
 
 # i3 config file (v4)
 #
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Use "Windows key" as the standard modifier
 set $mod Mod4
@@ -182,10 +182,12 @@ bindsym $mod+Control+j resize grow height 160 px or 16 ppt
 bindsym $mod+Control+k resize shrink height 160 px or 16 ppt
 bindsym $mod+Control+l resize grow width 100 px or 10 ppt
 
+# See https://github.com/zoltanp/xrandr-invert-colors
+bindsym $mod+comma exec "/usr/local/bin/xrandr-invert-colors"
 # Commands to adjust which monitor is active.  This is only good for laptop
-bindsym $mod+comma exec "xrandr --output eDP1 --off --output DP1 --auto"
-bindsym $mod+Control+comma exec "xrandr --output eDP1 --auto --output DP1 --mode 1920x1080"
-bindsym $mod+period exec "xrandr --output eDP1 --auto --output DP1 --off"
+# bindsym $mod+comma exec "xrandr --output eDP1 --off --output DP1 --auto"
+# bindsym $mod+Control+comma exec "xrandr --output eDP1 --auto --output DP1 --mode 1920x1080"
+bindsym $mod+period exec "xrandr --fb 1920x1080 --output eDP1 --mode 1920x1080"
 # bindsym $mod+slash exec "xrandr --output LVDS1 --auto --right-of HDMI3"
 # This will automatically activate all monitors
 bindsym $mod+slash exec "xrandr --auto"
@@ -221,7 +223,7 @@ show_marks yes
 
 # RedShift
 bindsym $mod+n exec "redshift -O 6500k"
-bindsym $mod+m exec "redshift -O 3500k"
+bindsym $mod+m exec "redshift -O 2500k"
 
 # Multimedia Keys
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && killall -SIGUSR1 i3status
@@ -273,7 +275,6 @@ exec --no-startup-id compton -CGb --backend glx --vsync opengl --inactive-dim 0.
 # finds out, if available)
 bar {
         status_command i3status
-        # tray_output primary
 }
 
 # Run the gnome sounds applet for volume control
