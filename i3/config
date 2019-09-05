@@ -49,7 +49,7 @@ bindsym $mod+Shift+y exec /usr/bin/google-chrome --app=https://cider.corp.google
 bindsym $mod+Shift+p exec /usr/bin/google-chrome --app=https://chat.google.com
 
 # Start a Tasks Window as an app
-bindsym $mod+Shift+t exec /usr/bin/google-chrome --app=https://mail.google.com/tasks/canvas
+bindsym $mod+Shift+t exec /usr/bin/google-chrome --app=https://tasks.google.com/embed/list/~default?fullWidth=1
 
 # kill focused window
 bindsym $mod+q kill
