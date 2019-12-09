@@ -71,6 +71,9 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+# Switch focus to next tab group.
+bindsym Mod1+Tab focus parent, focus right
+
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Left focus left
 # bindsym $mod+Down focus down
@@ -82,6 +85,9 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
+# Move window to next tab group.
+bindsym Mod1+Control+Tab mark _cur, focus parent, focus right, mark _new, [con_mark=_cur] move to mark _new, [con_mark=_cur] focus
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Shift+Left move left
