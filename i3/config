@@ -43,10 +43,10 @@ bindsym $mod+Control+Return exec /usr/bin/google-chrome --user-data-dir=.config/
 bindsym $mod+Shift+o exec /opt/intellij-ce-stable/bin/idea.sh
 
 # Start a Cider window
-bindsym $mod+Shift+y exec /usr/bin/google-chrome --app=https://cider.corp.google.com/?chromeApp
+bindsym $mod+Shift+p exec /usr/bin/google-chrome --app=https://cider.corp.google.com/?chromeApp
 
 # Start a Hangouts window
-bindsym $mod+Shift+p exec /usr/bin/google-chrome --app=https://chat.google.com
+bindsym $mod+Shift+y exec /usr/bin/google-chrome --app=https://chat.google.com
 
 # Start a Tasks Window as an app
 bindsym $mod+Shift+t exec /usr/bin/google-chrome --app=https://tasks.google.com/embed/list/~default?fullWidth=1
