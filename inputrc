@@ -4,6 +4,9 @@ set show-all-if-ambiguous on
 set editing-mode vi
 set keymap vi
 
+# Remove the (arg:200) thing when pasting in vi mode
+set enable-bracketed-paste off
+
 # I was getting this error: "readline: ~/.inputrc: line 6: -o: unknown variable name"
 # set -o vi
 

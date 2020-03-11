@@ -43,10 +43,13 @@ bindsym $mod+Control+Return exec /usr/bin/google-chrome --user-data-dir=.config/
 bindsym $mod+Shift+o exec /usr/bin/google-chrome --app-id=pnhechapfaindjhompbnflcldabbghjo
 
 # Start a Cider window
-bindsym $mod+Shift+y exec /usr/bin/google-chrome --app-id=ngonkpkdjoolhafdighbcajopenkobdn
+bindsym $mod+Shift+p exec /usr/bin/google-chrome --app=https://cider.corp.google.com/?chromeApp
 
 # Start a Hangouts window
-bindsym $mod+Shift+p exec /usr/bin/google-chrome --app-id=knipolnnllmklapflnccelgolnpehhpl
+bindsym $mod+Shift+y exec /usr/bin/google-chrome --app=https://chat.google.com
+
+# Start a Tasks Window as an app
+bindsym $mod+Shift+t exec /usr/bin/google-chrome --app=https://tasks.google.com/embed/list/~default?fullWidth=1
 
 # kill focused window
 bindsym $mod+q kill
@@ -68,11 +71,14 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+# Switch focus to next tab group.
+bindsym Mod1+Tab focus parent, focus right
+
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -80,11 +86,14 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+# Move window to next tab group.
+bindsym Mod1+Control+Tab mark _cur, focus parent, focus right, mark _new, [con_mark=_cur] move to mark _new, [con_mark=_cur] focus
+
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Up move up
+# bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+semicolon split h
@@ -193,19 +202,22 @@ bindsym $mod+slash exec "xrandr --auto"
 bindsym $mod+u [instance="oogle-chrome$"] focus
 bindsym $mod+i [class="^Terminator$"] focus
 # Disable by default
-# bindsym $mod+o [class="^Eclipse$" title="Eclipse"] focus
+# bindsym $mod+o [class="^jetbrains-idea-ce$"] focus
 # Secure Shell Chrome App
 bindsym $mod+o [instance="crx_pnhechapfaindjhompbnflcldabbghjo"] focus
 # Hangouts:
-bindsym $mod+p [instance="crx_knipolnnllmklapflnccelgolnpehhpl"] focus
+bindsym $mod+p [instance="chat.google.com"] focus
 # Cider:
-bindsym $mod+y [instance="crx_ngonkpkdjoolhafdighbcajopenkobdn"] focus
+bindsym $mod+y [instance="cider.corp.google.com"] focus
+# Tasks:
+bindsym $mod+t [instance="mail.google.com__tasks_canvas"] focus
+
 
 # Don't focus new windows or allow current windows to steal focus.
 #no_focus [class="."]
 # Don't let Hangouts window steal focus or be floating
-no_focus [instance="crx_knipolnnllmklapflnccelgolnpehhpl"]
-for_window [instance="crx_knipolnnllmklapflnccelgolnpehhpl"] floating disable
+no_focus [instance="chat.google.com"]
+for_window [instance="chat.google.com"] floating disable
 #focus_on_window_activation urgent
 focus_on_window_activation none
 
@@ -224,16 +236,38 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && ki
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && killall -SIGUSR1 i3status
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && killall -SIGUSR1 i3status
+# Equivalent multimedia Keys via $mod
+bindsym $mod+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5% && killall -SIGUSR1 i3status
+bindsym $mod+Down exec pactl set-sink-volume @DEFAULT_SINK@ -5% && killall -SIGUSR1 i3status
+bindsym $mod+bracketleft exec pactl set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
+bindsym $mod+bracketright exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && killall -SIGUSR1 i3status
 # These require sudo apt-get install xbacklight
 bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/xbacklight -dec 20
 bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/xbacklight -inc 20
 
+# Screen capture -- requires both scrot and xclip to be installed
+# Multi-screen screenshots with scrot
+bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
+
+# OSX-like area selection screenshots
+bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
+
 #-------------------------------------------------------------------------
 # Remove titles from Chrome windows
 # Hint: Use xprop command to find class name for a window.
-for_window [class="oogle-chrome$"] border pixel 0
-for_window [class="hromium-browser$"] border pixel 0
-for_window [] border pixel 0
+# for_window [class="oogle-chrome$"] border pixel 1
+# for_window [class="hromium-browser$"] border pixel 0
+for_window [class="."] border pixel 1  # Remove all titles from all windows in non-tabbed views
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #FF0000 #285577 #ffffff #2e9ef4   #FF0000
+client.focused_inactive #666666 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #666666 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #808080
+
 
 # Lock the screen after several minutes of being idle:
 exec xautolock -detectsleep -time 20 -locker "i3lock -c 000000" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
@@ -241,7 +275,7 @@ exec xautolock -detectsleep -time 20 -locker "i3lock -c 000000" -notify 30 -noti
 # Enable compton, a compositing windows manager.  This requires having compton
 # installed (sudo apt-get install compton)
 # See http://unix.stackexchange.com/questions/136932/why-am-i-having-ghosting-and-tearing-with-the-i3-window-manager-paired-with-xcom
-exec --no-startup-id compton -CGb --backend glx --vsync opengl --inactive-dim 0.1
+exec --no-startup-id compton -CGb --backend glx --vsync opengl --inactive-dim 0.125
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

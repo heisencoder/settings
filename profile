@@ -59,5 +59,15 @@ if [ -n "$DISPLAY" ]; then
   xset r rate 300 30
 fi
 
+# Enable directory expansion via ** operator
+shopt -s globstar
+
+# These are also defined in .bashrc, but are here in case I run 'sh' or 'ksh'.
+# This is to avoid truncating the ~/.bash_history file with the default
+# HISTSIZE of about 500 lines.
+HISTCONTROL=ignoreboth
+HISTSIZE=1000000
+HISTFILESIZE=2000000
+
 # Indicate that we're done
 echo "Ran ~/.profile"

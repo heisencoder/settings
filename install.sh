@@ -3,6 +3,7 @@
 SETTINGS=settings
 CONFIG_FILES='
   Xmodmap
+  Xresources
   bashrc
   i3
   i3status.conf

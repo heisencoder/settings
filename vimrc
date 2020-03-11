@@ -57,7 +57,7 @@ set autowrite
 
 " set mouse=a
 set nowrap
-colorscheme elflord
+" colorscheme elflord
 set number  " Display line numbers
 
 " Changes to change the color of the status bar in insert mode.
@@ -68,7 +68,7 @@ set laststatus=2
 " Now set it up to change the status line based on mode.
 
 if version >= 700
-  hi CursorLine ctermbg=darkblue cterm=none
+  hi CursorLine ctermbg=yellow cterm=none
   au InsertEnter * set cursorline
   au InsertLeave * set nocursorline
   " au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
