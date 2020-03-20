@@ -257,7 +257,7 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 # Hint: Use xprop command to find class name for a window.
 # for_window [class="oogle-chrome$"] border pixel 1
 # for_window [class="hromium-browser$"] border pixel 0
-for_window [class="."] border pixel 1  # Remove all titles from all windows in non-tabbed views
+for_window [class="."] border pixel 3  # Remove all titles from all windows in non-tabbed views
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #FF0000 #285577 #ffffff #2e9ef4   #FF0000
