@@ -98,6 +98,9 @@ bindsym Mod1+Control+Tab mark _cur, focus parent, focus right, mark _new, [con_m
 # split in horizontal orientation
 bindsym $mod+semicolon split h
 
+# Lock screen and suspend computer
+bindsym $mod+apostrophe exec i3lock && systemctl suspend
+
 # split in vertical orientation
 bindsym $mod+v split v
 
