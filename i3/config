@@ -33,10 +33,20 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# These require sudo apt-get install xbacklight
+bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/xbacklight -inc 20
+
+# Equivalent multimedia Keys via $mod
+bindsym $mod+Up exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && killall -SIGUSR1 i3status
+bindsym $mod+Down exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && killall -SIGUSR1 i3status
+bindsym $mod+bracketleft exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
+bindsym $mod+bracketright exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && killall -SIGUSR1 i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -258,20 +268,6 @@ show_marks yes
 bindsym $mod+n exec "redshift -O 6500k"
 bindsym $mod+m exec "redshift -O 2500k"
 
-# Multimedia Keys
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && killall -SIGUSR1 i3status
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
-bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && killall -SIGUSR1 i3status
-# Equivalent multimedia Keys via $mod
-bindsym $mod+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5% && killall -SIGUSR1 i3status
-bindsym $mod+Down exec pactl set-sink-volume @DEFAULT_SINK@ -5% && killall -SIGUSR1 i3status
-bindsym $mod+bracketleft exec pactl set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
-bindsym $mod+bracketright exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && killall -SIGUSR1 i3status
-# These require sudo apt-get install xbacklight
-bindsym XF86MonBrightnessDown exec --no-startup-id /usr/bin/xbacklight -dec 20
-bindsym XF86MonBrightnessUp exec --no-startup-id /usr/bin/xbacklight -inc 20
-
 # Screen capture -- requires both scrot and xclip to be installed
 # Multi-screen screenshots with scrot
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
@@ -314,9 +310,3 @@ bar {
 # This is part of the gnome-control-center package
 exec --no-startup-id /usr/bin/gnome-sound-applet
 
-# Run the NetworkManager
-exec --no-startup-id nm-applet
-
-# Initial layout
-exec --no-startup-id "i3-msg 'workspace 7; append_layout ~/settings/i3/workspace-7.json'"
-exec --no-startup-id "i3-msg 'workspace 9; append_layout ~/settings/i3/workspace-9.json'"
