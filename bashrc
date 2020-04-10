@@ -159,7 +159,7 @@ alias cd4='cd ../../../..'
 alias cd5='cd ../../../../..'
 alias cd6='cd ../../../../../..'
 
-PATH=~/bin:$PATH
+PATH=~/bin:~/.local/bin:$PATH
 
 # Search and replace within git
 # $1 = search string, $2 = replace string
