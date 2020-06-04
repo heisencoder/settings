@@ -23,3 +23,9 @@ for f in $CONFIG_FILES; do
     echo "File $f already exists"
   fi
 done
+
+# Link the dunst config
+cd ~/.config
+mkdir -p dunst
+cd dunst
+ln -s ~/$SETTINGS/dunstrc dunstrc
