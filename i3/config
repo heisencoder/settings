@@ -266,7 +266,7 @@ hide_edge_borders both
 show_marks yes
 
 # RedShift
-bindsym $mod+n exec "redshift -O 6500k"
+bindsym $mod+n exec "redshift -x"
 bindsym $mod+m exec "redshift -O 2500k"
 
 # Screen capture -- requires both scrot and xclip to be installed
