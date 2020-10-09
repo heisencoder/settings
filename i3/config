@@ -57,8 +57,9 @@ floating_modifier $mod
 bindsym $mod+Shift+i exec /usr/bin/terminator
 
 # Start a Chrome window
-bindsym $mod+Shift+u exec /usr/bin/google-chrome
-bindsym $mod+Control+Return exec /usr/bin/google-chrome --user-data-dir=.config/chrome-personal
+bindsym $mod+Shift+u exec /usr/bin/google-chrome --enable-features=NativeNotifications
+# Take a break from personal profile.
+# bindsym $mod+Control+Return exec /usr/bin/google-chrome --user-data-dir=.config/chrome-personal
 
 # Start a Secure Shell Window
 # bindsym $mod+Shift+o exec /usr/bin/google-chrome --app=chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html#profile-id:b142
@@ -75,7 +76,6 @@ bindsym $mod+Shift+t exec /usr/bin/google-chrome --app=https://tasks.google.com/
 
 # kill focused window
 bindsym $mod+q kill
-bindsym Mod1+F4 kill
 
 # Disable focus following mouse
 focus_follows_mouse no
@@ -94,7 +94,8 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # Switch focus to next tab group.
-bindsym Mod1+Tab focus parent, focus right
+# bindsym Mod1+Tab focus parent, focus right
+bindsym $mod+Tab focus parent, focus right
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Left focus left
@@ -249,7 +250,7 @@ bindsym $mod+p [instance="chat.google.com"] focus
 # Cider:
 bindsym $mod+y [instance="cider.corp.google.com"] focus
 # Tasks:
-bindsym $mod+t [instance="mail.google.com__tasks_canvas"] focus
+bindsym $mod+t [instance="tasks.google.com__embed_list__default"] focus
 
 # Don't focus new windows or allow current windows to steal focus.
 #no_focus [class="."]
