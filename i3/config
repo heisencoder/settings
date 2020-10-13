@@ -61,6 +61,9 @@ bindsym $mod+Shift+u exec /usr/bin/google-chrome --enable-features=NativeNotific
 # Take a break from personal profile.
 # bindsym $mod+Control+Return exec /usr/bin/google-chrome --user-data-dir=.config/chrome-personal
 
+# Fix the keyboard repeat rate.
+bindsym $mod+Control+Return exec /home/mball/settings/fix
+
 # Start a Secure Shell Window
 # bindsym $mod+Shift+o exec /usr/bin/google-chrome --app=chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html#profile-id:b142
 bindsym $mod+Shift+o exec /usr/bin/google-chrome --app=chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html
@@ -94,8 +97,8 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # Switch focus to next tab group.
-# bindsym Mod1+Tab focus parent, focus right
-bindsym $mod+Tab focus parent, focus right
+bindsym Mod1+Tab focus parent, focus right
+# bindsym $mod+Tab focus parent, focus right
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Left focus left
@@ -258,7 +261,7 @@ bindsym $mod+t [instance="tasks.google.com__embed_list__default"] focus
 no_focus [instance="chat.google.com"]
 for_window [instance="chat.google.com"] floating disable
 #focus_on_window_activation urgent
-focus_on_window_activation none
+#focus_on_window_activation none
 
 # Hide window borders on edge of screen.
 hide_edge_borders both
