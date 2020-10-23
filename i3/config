@@ -12,6 +12,8 @@
 # Use "Windows key" as the standard modifier
 set $mod Mod4
 
+set $google-chrome /usr/bin/google-chrome
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
@@ -57,25 +59,25 @@ floating_modifier $mod
 bindsym $mod+Shift+i exec /usr/bin/terminator
 
 # Start a Chrome window
-bindsym $mod+Shift+u exec /usr/bin/google-chrome --enable-features=NativeNotifications
+bindsym $mod+Shift+u exec $google-chrome --enable-features=NativeNotifications
 # Take a break from personal profile.
-# bindsym $mod+Control+Return exec /usr/bin/google-chrome --user-data-dir=.config/chrome-personal
+# bindsym $mod+Control+Return exec $google-chrome --user-data-dir=.config/chrome-personal
 
 # Fix the keyboard repeat rate.
 bindsym $mod+Control+Return exec /home/mball/settings/fix
 
 # Start a Secure Shell Window
-# bindsym $mod+Shift+o exec /usr/bin/google-chrome --app=chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html#profile-id:b142
-bindsym $mod+Shift+o exec /usr/bin/google-chrome --app=chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html
+# bindsym $mod+Shift+o exec $google-chrome --app=chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html#profile-id:b142
+bindsym $mod+Shift+o exec $google-chrome --app=chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html
 
 # Start a Cider window
-bindsym $mod+Shift+p exec /usr/bin/google-chrome --app=https://cider.corp.google.com/?chromeApp
+bindsym $mod+Shift+p exec $google-chrome --app=https://cider.corp.google.com/?chromeApp
 
 # Start a Hangouts window
-bindsym $mod+Shift+y exec /usr/bin/google-chrome --app=https://chat.google.com
+bindsym $mod+Shift+y exec $google-chrome --app=https://chat.google.com
 
 # Start a Tasks Window as an app
-bindsym $mod+Shift+t exec /usr/bin/google-chrome --app=https://tasks.google.com/embed/list/~default?fullWidth=1
+bindsym $mod+Shift+t exec $google-chrome --app=https://tasks.google.com/embed/list/~default?fullWidth=1
 
 # kill focused window
 bindsym $mod+q kill
@@ -264,7 +266,9 @@ for_window [instance="chat.google.com"] floating disable
 #focus_on_window_activation none
 
 # Hide window borders on edge of screen.
-hide_edge_borders both
+# (Disable for now while waiting for Chrome bug to be fixed)
+# hide_edge_borders both
+hide_edge_borders vertical
 
 # Show marks on the right side of the window decoration.
 show_marks yes
