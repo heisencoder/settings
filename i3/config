@@ -68,16 +68,30 @@ bindsym $mod+Control+Return exec /home/mball/settings/fix
 
 # Start a Secure Shell Window
 # bindsym $mod+Shift+o exec $google-chrome --app=chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html#profile-id:b142
-bindsym $mod+Shift+o exec $google-chrome --app=chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html
+bindsym $mod+Shift+o exec $google-chrome --app=chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html
 
 # Start a Cider window
-bindsym $mod+Shift+p exec $google-chrome --app=https://cider.corp.google.com/?chromeApp
+# bindsym $mod+Shift+p exec $google-chrome --app=https://cider.corp.google.com/?chromeApp
+# Start an VSCode Window (install via `sudo apt install code`)
+bindsym $mod+Shift+p exec /usr/bin/code
 
 # Start a Hangouts window
 bindsym $mod+Shift+y exec $google-chrome --app=https://chat.google.com
 
 # Start a Tasks Window as an app
 bindsym $mod+Shift+t exec $google-chrome --app=https://tasks.google.com/embed/list/~default?fullWidth=1
+
+# Hotkeys to autofocus a particular window type
+bindsym $mod+u [instance="oogle-chrome"] focus
+bindsym $mod+i [class="^Terminator$"] focus
+# Secure Shell Chrome App (omit the 'crx_' prefix to catch both ways of launching)
+bindsym $mod+o [instance="iodihamcpbpeioajjeobimgagajmlibd"] focus
+# VSCode:
+bindsym $mod+p [instance="^code$"] focus
+# Cider:
+bindsym $mod+y [instance="chat.google.com"] focus
+# Tasks:
+bindsym $mod+t [instance="tasks.google.com__embed_list__default"] focus
 
 # kill focused window
 bindsym $mod+q kill
@@ -243,20 +257,6 @@ bindsym $mod+period exec "xrandr --fb 1920x1080 --output eDP1 --mode 1920x1080"
 # This will automatically activate all monitors
 bindsym $mod+slash exec "xrandr --auto"
 
-# Hotkeys to autofocus a particular window type
-bindsym $mod+u [instance="oogle-chrome$"] focus
-bindsym $mod+i [class="^Terminator$"] focus
-# Disable by default
-# bindsym $mod+o [class="^jetbrains-idea-ce$"] focus
-# Secure Shell Chrome App
-bindsym $mod+o [instance="crx_pnhechapfaindjhompbnflcldabbghjo"] focus
-# Hangouts:
-bindsym $mod+p [instance="chat.google.com"] focus
-# Cider:
-bindsym $mod+y [instance="cider.corp.google.com"] focus
-# Tasks:
-bindsym $mod+t [instance="tasks.google.com__embed_list__default"] focus
-
 # Don't focus new windows or allow current windows to steal focus.
 #no_focus [class="."]
 # Don't let Hangouts window steal focus or be floating
@@ -266,9 +266,7 @@ for_window [instance="chat.google.com"] floating disable
 #focus_on_window_activation none
 
 # Hide window borders on edge of screen.
-# (Disable for now while waiting for Chrome bug to be fixed)
-# hide_edge_borders both
-hide_edge_borders vertical
+hide_edge_borders both
 
 # Show marks on the right side of the window decoration.
 show_marks yes
