@@ -133,7 +133,8 @@ function timer_stop {
 
 trap 'timer_start' DEBUG
 
-PROMPT_COMMAND="timer_stop"
+# Append last command to .bash_history and show elapsed seconds
+PROMPT_COMMAND="timer_stop;history -a"
 
 function __error_level {
   echo $?
@@ -177,3 +178,9 @@ if [ -f ~/.bashrc.`hostname -a` ]; then
 elif [ -f ~/settings/bashrc.`hostname -a` ]; then
   source ~/settings/bashrc.`hostname -a`
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/mball/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/mball/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/mball/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/mball/Downloads/google-cloud-sdk/completion.bash.inc'; fi
