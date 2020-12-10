@@ -128,13 +128,15 @@ function timer_start {
 
 function timer_stop {
   timer_show=$(($SECONDS - $timer))
+  # Also, immediately flush last command to .bash_history
+  history -a
   unset timer
 }
 
 trap 'timer_start' DEBUG
 
 # Append last command to .bash_history and show elapsed seconds
-PROMPT_COMMAND="timer_stop;history -a"
+PROMPT_COMMAND="timer_stop"
 
 function __error_level {
   echo $?
