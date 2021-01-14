@@ -50,6 +50,11 @@ bindsym $mod+Down exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% 
 bindsym $mod+bracketleft exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
 bindsym $mod+bracketright exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && killall -SIGUSR1 i3status
 
+# Camera control for auto-exposure mode
+# Requires sudo apt install v4l-utils
+bindsym $mod+Ctrl+comma exec v4l2-ctl -d /dev/video2 --set-ctrl=exposure_auto=1
+bindsym $mod+Ctrl+period exec v4l2-ctl -d /dev/video2 --set-ctrl=exposure_auto=3
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
