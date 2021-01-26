@@ -257,7 +257,7 @@ bindsym $mod+comma exec "/usr/local/bin/xrandr-invert-colors"
 # Commands to adjust which monitor is active.  This is only good for laptop
 # bindsym $mod+comma exec "xrandr --output eDP1 --off --output DP1 --auto"
 # bindsym $mod+Control+comma exec "xrandr --output eDP1 --auto --output DP1 --mode 1920x1080"
-bindsym $mod+period exec "xrandr --fb 1920x1080 --output eDP1 --mode 1920x1080"
+# bindsym $mod+period exec "xrandr --fb 1920x1080 --output eDP1 --mode 1920x1080"
 # bindsym $mod+slash exec "xrandr --output LVDS1 --auto --right-of HDMI3"
 # This will automatically activate all monitors
 bindsym $mod+slash exec "xrandr --auto"
