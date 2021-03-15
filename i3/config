@@ -84,7 +84,9 @@ bindsym $mod+Shift+p exec /usr/bin/code
 bindsym $mod+Shift+y exec $google-chrome --app=https://chat.google.com
 
 # Start a Tasks Window as an app
-bindsym $mod+Shift+t exec $google-chrome --app=https://tasks.google.com/embed/list/~default?fullWidth=1
+# bindsym $mod+Shift+t exec $google-chrome --app=https://tasks.google.com/embed/list/~default?fullWidth=1
+# bindsym $mod+Shift+t exec $google-chrome --app=https://b.corp.google.com/hotlists/3046566
+bindsym $mod+Shift+t exec $google-chrome --app=https://g3c.corp.google.com/
 
 # Hotkeys to autofocus a particular window type
 bindsym $mod+u [instance="oogle-chrome"] focus
@@ -96,7 +98,8 @@ bindsym $mod+p [instance="^code$"] focus
 # Cider:
 bindsym $mod+y [instance="chat.google.com"] focus
 # Tasks:
-bindsym $mod+t [instance="tasks.google.com__embed_list__default"] focus
+# bindsym $mod+t [instance="tasks.google.com__embed_list__default"] focus
+bindsym $mod+t [instance="g3c.corp.google.com"] focus
 
 # kill focused window
 bindsym $mod+q kill
