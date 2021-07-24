@@ -12,7 +12,7 @@
 # Use "Windows key" as the standard modifier
 set $mod Mod4
 
-set $google-chrome /usr/bin/google-chrome-beta
+set $google-chrome /usr/bin/google-chrome
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -95,7 +95,7 @@ bindsym $mod+Shift+y exec $google-chrome --app=https://chat.google.com
 bindsym $mod+Shift+t exec $google-chrome --app=https://g3c.corp.google.com/
 
 # Hotkeys to autofocus a particular window type
-bindsym $mod+u [instance="oogle-chrome-beta"] focus
+bindsym $mod+u [instance="oogle-chrome"] focus
 bindsym $mod+i [class="^Terminator$"] focus
 # Secure Shell Chrome App (omit the 'crx_' prefix to catch both ways of launching)
 bindsym $mod+o [instance="iodihamcpbpeioajjeobimgagajmlibd"] focus

@@ -1,11 +1,14 @@
 #/bin/bash
 # This script will setup a new home directory to point to ~/settings for overridden settings files
+
+# The location of this repository.  Should be placed in ~/settings
 SETTINGS=settings
+
+# These files will be copied to ~ with a period prepended
 CONFIG_FILES='
   Xmodmap
   Xresources
   bashrc
-  i3
   i3status.conf
   imwheelrc
   inputrc
@@ -14,7 +17,15 @@ CONFIG_FILES='
   xsession
 '
 
+# These directories will be linked to ~/.config
+CONFIG_DIRS='
+  i3
+  dunst
+  terminator
+'
+
 cd ~
+
 for f in $CONFIG_FILES; do
   if [ ! -e .$f ]; then
     echo "Linking $f"
@@ -24,8 +35,14 @@ for f in $CONFIG_FILES; do
   fi
 done
 
-# Link the dunst config
 cd ~/.config
-mkdir -p dunst
-cd dunst
-ln -s ~/$SETTINGS/dunstrc dunstrc
+
+for d in $CONFIG_DIRS; do
+  if [ ! -e $d ]; then
+    echo "Linking $d"
+    ln -s ../$SETTINGS/$d .
+  else
+    echo "Directory $d already exists"
+  fi
+done
+
