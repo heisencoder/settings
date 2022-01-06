@@ -3,6 +3,8 @@ This file remaps the key bindings of a single user on Mac OS X 10.5 to more clos
 match default behavior on Windows systems.  This particular mapping assumes
 that you have also switched the Control and Command keys already.
 
+Note that ~/Library/KeyBindings/DefaultKeyBinding.Dict cannot be a symlink.
+
 This key mapping is more appropriate after switching Ctrl for Command in this menu:
 Apple->System Preferences->Keyboard & Mouse->Keyboard->Modifier Keys...->
 Change Control Key to Command
@@ -55,6 +57,8 @@ which is completely different.
 "@\UF702"  = "moveWordBackward:";                            /* Cmd  + LeftArrow */
 "@\UF703"  = "moveWordForward:";                             /* Cmd  + RightArrow */
 "@$\UF702" = "moveWordBackwardAndModifySelection:";   /* Shift + Cmd  + Leftarrow */
-"@$\UF703" = "moveWordForwardAndModifySelection:";   /* Shift + Cmd  + Rightarrow */
+"@$\UF703" = "moveWordForwardAndModifySelection:";    /* Shift + Cmd  + Rightarrow */
+"@\U007F"  = "deleteWordBackward:";                   /* Cmd + delete left */
+"@\Uf728"  = "deleteWordForward:";                    /* C-FwdDel     Delete word forward */
 }
 
