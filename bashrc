@@ -181,6 +181,11 @@ elif [ -f ~/settings/bashrc.`hostname -a` ]; then
   source ~/settings/bashrc.`hostname -a`
 fi
 
+# Manually run git-prompt shell if on mac
+if [ -f ~/.git-prompt.sh ]; then
+  source ~/.git-prompt.sh
+fi
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/mball/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/mball/Downloads/google-cloud-sdk/path.bash.inc'; fi
 
