@@ -205,6 +205,210 @@
           ]
        },
        {
+          "description": "Left Arrow (option)",
+          "manipulators": [
+             {
+                "conditions": [
+                   {
+                      "bundle_identifiers": [
+                         "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                         "^com\\.parallels\\.desktop\\.console$",
+                         "^org\\.vmware\\.fusion$",
+                         "^org\\.gnu\\.emacs$",
+                         "^com\\.jetbrains\\.intellij\\.ce$",
+                         "^com\\.jetbrains\\.PhpStorm$",
+                         "^com\\.jetbrains\\.pycharm$",
+                         "^com\\.jetbrains\\.rider$",
+                         "^com\\.microsoft\\.VSCode$",
+                         "^com\\.sublimetext\\.3$",
+                         "^com\\.citrix\\.XenAppViewer$",
+                         "^com\\.microsoft\\.rdc\\.macos$",
+                         "^io\\.alacritty$",
+                         "^co\\.zeit\\.hyper$",
+                         "^com\\.googlecode\\.iterm2$",
+                         "^com\\.apple\\.Terminal$"
+                      ],
+                      "type": "frontmost_application_unless"
+                   }
+                ],
+                "from": {
+                   "key_code": "left_arrow",
+                   "modifiers": {
+                      "mandatory": [
+                         "option"
+                      ],
+                      "optional": [
+                         "any"
+                      ]
+                   }
+                },
+                "to": [
+                   {
+                      "key_code": "left_arrow",
+                      "modifiers": [
+                         "command"
+                      ]
+                   }
+                ],
+                "type": "basic"
+             }
+          ]
+       },
+       {
+          "description": "Left Arrow (option+Shift)",
+          "manipulators": [
+             {
+                "conditions": [
+                   {
+                      "bundle_identifiers": [
+                         "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                         "^com\\.parallels\\.desktop\\.console$",
+                         "^org\\.vmware\\.fusion$",
+                         "^org\\.gnu\\.emacs$",
+                         "^com\\.jetbrains\\.intellij\\.ce$",
+                         "^com\\.jetbrains\\.PhpStorm$",
+                         "^com\\.jetbrains\\.pycharm$",
+                         "^com\\.jetbrains\\.rider$",
+                         "^com\\.microsoft\\.VSCode$",
+                         "^com\\.sublimetext\\.3$",
+                         "^com\\.citrix\\.XenAppViewer$",
+                         "^com\\.microsoft\\.rdc\\.macos$",
+                         "^io\\.alacritty$",
+                         "^co\\.zeit\\.hyper$",
+                         "^com\\.googlecode\\.iterm2$",
+                         "^com\\.apple\\.Terminal$"
+                      ],
+                      "type": "frontmost_application_unless"
+                   }
+                ],
+                "from": {
+                   "key_code": "left_arrow",
+                   "modifiers": {
+                      "mandatory": [
+                         "option",
+                         "shift"
+                      ],
+                      "optional": [
+                         "any"
+                      ]
+                   }
+                },
+                "to": [
+                   {
+                      "key_code": "left_arrow",
+                      "modifiers": [
+                         "command",
+                         "shift"
+                      ]
+                   }
+                ],
+                "type": "basic"
+             }
+          ]
+       },
+       {
+          "description": "Right Arrow (option)",
+          "manipulators": [
+             {
+                "conditions": [
+                   {
+                      "bundle_identifiers": [
+                         "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                         "^com\\.parallels\\.desktop\\.console$",
+                         "^org\\.vmware\\.fusion$",
+                         "^org\\.gnu\\.emacs$",
+                         "^com\\.jetbrains\\.intellij\\.ce$",
+                         "^com\\.jetbrains\\.PhpStorm$",
+                         "^com\\.jetbrains\\.pycharm$",
+                         "^com\\.jetbrains\\.rider$",
+                         "^com\\.microsoft\\.VSCode$",
+                         "^com\\.sublimetext\\.3$",
+                         "^com\\.citrix\\.XenAppViewer$",
+                         "^com\\.microsoft\\.rdc\\.macos$",
+                         "^io\\.alacritty$",
+                         "^co\\.zeit\\.hyper$",
+                         "^com\\.googlecode\\.iterm2$",
+                         "^com\\.apple\\.Terminal$"
+                      ],
+                      "type": "frontmost_application_unless"
+                   }
+                ],
+                "from": {
+                   "key_code": "right_arrow",
+                   "modifiers": {
+                      "mandatory": [
+                         "option"
+                      ],
+                      "optional": [
+                         "any"
+                      ]
+                   }
+                },
+                "to": [
+                   {
+                      "key_code": "right_arrow",
+                      "modifiers": [
+                         "command"
+                      ]
+                   }
+                ],
+                "type": "basic"
+             }
+          ]
+       },
+       {
+          "description": "Right Arrow (option+Shift)",
+          "manipulators": [
+             {
+                "conditions": [
+                   {
+                      "bundle_identifiers": [
+                         "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                         "^com\\.parallels\\.desktop\\.console$",
+                         "^org\\.vmware\\.fusion$",
+                         "^org\\.gnu\\.emacs$",
+                         "^com\\.jetbrains\\.intellij\\.ce$",
+                         "^com\\.jetbrains\\.PhpStorm$",
+                         "^com\\.jetbrains\\.pycharm$",
+                         "^com\\.jetbrains\\.rider$",
+                         "^com\\.microsoft\\.VSCode$",
+                         "^com\\.sublimetext\\.3$",
+                         "^com\\.citrix\\.XenAppViewer$",
+                         "^com\\.microsoft\\.rdc\\.macos$",
+                         "^io\\.alacritty$",
+                         "^co\\.zeit\\.hyper$",
+                         "^com\\.googlecode\\.iterm2$",
+                         "^com\\.apple\\.Terminal$"
+                      ],
+                      "type": "frontmost_application_unless"
+                   }
+                ],
+                "from": {
+                   "key_code": "right_arrow",
+                   "modifiers": {
+                      "mandatory": [
+                         "option",
+                         "shift"
+                      ],
+                      "optional": [
+                         "any"
+                      ]
+                   }
+                },
+                "to": [
+                   {
+                      "key_code": "right_arrow",
+                      "modifiers": [
+                         "command",
+                         "shift"
+                      ]
+                   }
+                ],
+                "type": "basic"
+             }
+          ]
+       },
+       {
           "description": "Backspace (command)",
           "manipulators": [
              {
