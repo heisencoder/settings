@@ -58,8 +58,8 @@ bindsym $mod+bracketright exec --no-startup-id pactl set-source-mute @DEFAULT_SO
 
 # Camera control for auto-exposure mode
 # Requires sudo apt install v4l-utils
-bindsym $mod+Ctrl+comma exec v4l2-ctl -d /dev/video2 --set-ctrl=exposure_auto=1
-bindsym $mod+Ctrl+period exec v4l2-ctl -d /dev/video2 --set-ctrl=exposure_auto=3
+# bindsym $mod+Ctrl+comma exec v4l2-ctl -d /dev/video2 --set-ctrl=exposure_auto=1
+# bindsym $mod+Ctrl+period exec v4l2-ctl -d /dev/video2 --set-ctrl=exposure_auto=3
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -67,32 +67,32 @@ floating_modifier $mod
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
 # bindsym $mod+Return exec /usr/bin/gnome-terminal
-bindsym $mod+Shift+i exec /usr/bin/terminator
+bindsym $mod+Control+i exec /usr/bin/terminator
 
 # Start a Chrome window
-bindsym $mod+Shift+u exec $google-chrome --enable-features=NativeNotifications
+bindsym $mod+Control+u exec $google-chrome --enable-features=NativeNotifications
 # Take a break from personal profile.
 # bindsym $mod+Control+Return exec $google-chrome --user-data-dir=.config/chrome-personal
 
 # Fix the keyboard repeat rate.
-bindsym $mod+Control+Return exec /home/mball/settings/fix
+bindsym $mod+Control+Return exec /home/matt/settings/fix
 
 # Start a Secure Shell Window
 # bindsym $mod+Shift+o exec $google-chrome --app=chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html#profile-id:b142
-bindsym $mod+Shift+o exec $google-chrome --app=chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html
+bindsym $mod+Control+o exec $google-chrome --app=chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html
 
 # Start a Cider window
 # bindsym $mod+Shift+p exec $google-chrome --app=https://cider.corp.google.com/?chromeApp
 # Start an VSCode Window (install via `sudo apt install code`)
-bindsym $mod+Shift+p exec /usr/bin/code
+bindsym $mod+Control+p exec /usr/bin/code
 
 # Start a Hangouts window
-bindsym $mod+Shift+y exec $google-chrome --app=https://chat.google.com
+# bindsym $mod+Control+y exec $google-chrome --app=https://chat.google.com
 
 # Start a Tasks Window as an app
 # bindsym $mod+Shift+t exec $google-chrome --app=https://tasks.google.com/embed/list/~default?fullWidth=1
 # bindsym $mod+Shift+t exec $google-chrome --app=https://b.corp.google.com/hotlists/3046566
-bindsym $mod+Shift+t exec $google-chrome --app=https://g3c.corp.google.com/
+# bindsym $mod+Shift+t exec $google-chrome --app=https://g3c.corp.google.com/
 
 # Hotkeys to autofocus a particular window type
 bindsym $mod+u [instance="oogle-chrome"] focus
@@ -137,10 +137,10 @@ bindsym Mod1+Tab focus parent, focus right
 # bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Control+h move left
+bindsym $mod+Control+j move down
+bindsym $mod+Control+k move up
+bindsym $mod+Control+l move right
 
 # Move window to next tab group.
 bindsym Mod1+Control+Tab mark _cur, focus parent, focus right, mark _new, [con_mark=_cur] move to mark _new, [con_mark=_cur] focus
@@ -169,7 +169,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Control+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -206,23 +206,23 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Control+1 move container to workspace number $ws1
+bindsym $mod+Control+2 move container to workspace number $ws2
+bindsym $mod+Control+3 move container to workspace number $ws3
+bindsym $mod+Control+4 move container to workspace number $ws4
+bindsym $mod+Control+5 move container to workspace number $ws5
+bindsym $mod+Control+6 move container to workspace number $ws6
+bindsym $mod+Control+7 move container to workspace number $ws7
+bindsym $mod+Control+8 move container to workspace number $ws8
+bindsym $mod+Control+9 move container to workspace number $ws9
+bindsym $mod+Control+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Control+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Control+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Control+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Disable resize mode because it sucks
 # resize window (you can also use the mouse for that)
@@ -256,10 +256,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #bindsym Mod1+Control+l exec "cinnamon-screensaver-command --lock"
 bindsym $mod+Control+semicolon exec "i3lock -c 000000"
 
-bindsym $mod+Control+h resize shrink width 100 px or 10 ppt
-bindsym $mod+Control+j resize grow height 160 px or 16 ppt
-bindsym $mod+Control+k resize shrink height 160 px or 16 ppt
-bindsym $mod+Control+l resize grow width 100 px or 10 ppt
+bindsym $mod+Control+period resize shrink width 100 px or 10 ppt
+bindsym $mod+Control+m      resize grow height 160 px or 16 ppt
+bindsym $mod+Control+/      resize shrink height 160 px or 16 ppt
+bindsym $mod+Control+comma  resize grow width 100 px or 10 ppt
 
 # See https://github.com/zoltanp/xrandr-invert-colors
 bindsym $mod+comma exec "/usr/local/bin/xrandr-invert-colors"
