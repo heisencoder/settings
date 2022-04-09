@@ -33,7 +33,7 @@ font pango:monospace 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- "i3lock -c 000000" --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -73,7 +73,8 @@ floating_modifier $mod
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
 # bindsym $mod+Return exec /usr/bin/gnome-terminal
-bindsym $mod+Control+i exec /usr/bin/terminator
+# bindsym $mod+Control+i exec /usr/bin/terminator
+bindsym $mod+Control+i exec /usr/bin/alacritty || /usr/bin/terminator || /usr/bin/gnome-terminal || i3-sensible-terminal
 
 # Start a Chrome window
 bindsym $mod+Control+u exec $google-chrome --enable-features=NativeNotifications
@@ -161,7 +162,7 @@ bindsym Mod1+Control+Tab mark _cur, focus parent, focus right, mark _new, [con_m
 bindsym $mod+semicolon split h
 
 # Lock screen and suspend computer
-bindsym $mod+apostrophe exec i3lock && systemctl suspend
+bindsym $mod+apostrophe exec "i3lock -c 000000 && systemctl suspend"
 
 # split in vertical orientation
 bindsym $mod+v split v
