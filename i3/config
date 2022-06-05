@@ -33,7 +33,7 @@ font pango:monospace 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- "i3lock -c 000000" --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- "i3lock -c 000050" --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -103,7 +103,7 @@ bindsym $mod+Control+p exec /usr/bin/code
 
 # Hotkeys to autofocus a particular window type
 bindsym $mod+u [instance="oogle-chrome"] focus
-bindsym $mod+i [class="^Terminator$"] focus
+bindsym $mod+i [class="^Terminator|Alacritty$"] focus
 # Secure Shell Chrome App (omit the 'crx_' prefix to catch both ways of launching)
 bindsym $mod+o [instance="iodihamcpbpeioajjeobimgagajmlibd"] focus
 # VSCode:
@@ -162,7 +162,7 @@ bindsym Mod1+Control+Tab mark _cur, focus parent, focus right, mark _new, [con_m
 bindsym $mod+semicolon split h
 
 # Lock screen and suspend computer
-bindsym $mod+apostrophe exec "i3lock -c 000000 && systemctl suspend"
+bindsym $mod+apostrophe exec "i3lock -c 000050 && systemctl suspend"
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -261,7 +261,7 @@ bindsym $mod+Control+e exec "i3-nagbar -t warning -m 'You pressed the exit short
 
 # Matt's customizations to key bindings
 #bindsym Mod1+Control+l exec "cinnamon-screensaver-command --lock"
-bindsym $mod+Control+semicolon exec "i3lock -c 000000"
+bindsym $mod+Control+semicolon exec "i3lock -c 000050"
 
 bindsym $mod+Control+period resize shrink width 100 px or 10 ppt
 bindsym $mod+Control+m      resize grow height 160 px or 16 ppt
@@ -322,7 +322,7 @@ client.background       #808080
 
 
 # Lock the screen after several minutes of being idle:
-exec xautolock -detectsleep -time 10 -locker "i3lock -c 000000" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
+exec xautolock -detectsleep -time 10 -locker "i3lock -c 000050" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
 
 # Enable compton, a compositing windows manager.  This requires having compton
 # installed (sudo apt-get install compton)
