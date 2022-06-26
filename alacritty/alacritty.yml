@@ -279,27 +279,27 @@ colors:
   #  text: CellBackground
   #  background: CellForeground
 
-  # Normal colors
-  #normal:
-  #  black:   '#1d1f21'
-  #  red:     '#cc6666'
-  #  green:   '#b5bd68'
-  #  yellow:  '#f0c674'
-  #  blue:    '#81a2be'
-  #  magenta: '#b294bb'
-  #  cyan:    '#8abeb7'
-  #  white:   '#c5c8c6'
+  # normal colors
+  normal:
+    black:   '#222222'
+    red:     '#cc4444'
+    green:   '#55aa55'
+    yellow:  '#aa9933'
+    blue:    '#4433ee'
+    magenta: '#994499'
+    cyan:    '#228888'
+    white:   '#cccccc'
 
   # Bright colors
-  #bright:
-  #  black:   '#666666'
-  #  red:     '#d54e53'
-  #  green:   '#b9ca4a'
-  #  yellow:  '#e7c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#c397d8'
-  #  cyan:    '#70c0b1'
-  #  white:   '#eaeaea'
+  bright:
+    black:   '#666666'
+    red:     '#dd4455'
+    green:   '#bbcc44'
+    yellow:  '#eecc44'
+    blue:    '#77aadd'
+    magenta: '#cc99dd'
+    cyan:    '#77bbbb'
+    white:   '#eeeeee'
 
   # Dim colors
   #
