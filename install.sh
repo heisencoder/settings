@@ -25,6 +25,10 @@ CONFIG_DIRS='
   terminator
 '
 
+BIN_FILES='
+  ddo
+'
+
 cd ~
 
 for f in $CONFIG_FILES; do
@@ -47,3 +51,14 @@ for d in $CONFIG_DIRS; do
   fi
 done
 
+cd ~
+mkdir -p ~/bin
+
+for f in $BIN_FILES; do
+  if [ ! -e bin/$f ]; then
+    echo "Linking bin/$f"
+    ln -s ~/$SETTINGS/bin/$f bin/$f
+  else
+    echo "File bin/$f already exists"
+  fi
+done
