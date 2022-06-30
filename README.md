@@ -17,9 +17,9 @@ cd ~
 git clone https://github.com/heisencoder/settings.git
 ```
 
-2. Install the settings. 
+2. Install the settings
 
-Before 
+Beware!  This will add a lot of symlinks to your home directory!
 
 ```shell
 cd settings
