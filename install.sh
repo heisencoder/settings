@@ -27,6 +27,7 @@ CONFIG_DIRS='
 
 BIN_FILES='
   ddo
+  ggo
 '
 
 cd ~

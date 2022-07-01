@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# This script performs set up for creating a new feature branch in Git.
+
+# This assumes that you're already in a git repo and that the default branch is `main`
+
+# Usage: ggo [new-branch-name]
+
+DEFAULT=main
+PREFIX=mball/
+NEW_BRANCH=${PREFIX}$1
+
+set -e # Exit on error
+set -x # Show command before running
+
+git checkout $DEFAULT
+git pull
+# Cleanup stale branches
+git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
+if [ "$1" ]; then
+  git checkout -b $NEW_BRANCH
+  git push --set-upstream origin $NEW_BRANCH
+fi
+
