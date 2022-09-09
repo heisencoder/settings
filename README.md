@@ -17,6 +17,14 @@ cd ~
 git clone https://github.com/heisencoder/settings.git
 ```
 
+### Git Settings
+
+Update git to point to the githooks directory
+
+```shell
+git config --global core.hooksPath ~/settings/githooks
+```
+
 2. Install the settings
 
 Beware!  This will add a lot of symlinks to your home directory!
@@ -39,3 +47,4 @@ branch and then merge the baseline branch into `main`.
 When upgrading the baseline environment (e.g., when upgrading to a new Ubuntu version or a new version of a dependency like i3), 
 regenerate a new template file and check that into `baseline` and then merge that into `main`.
 In this way, new changes can more easily get included via a 3-day merge.
+
