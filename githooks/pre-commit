@@ -1,8 +1,9 @@
 #!/bin/sh
 
 branch="$(git rev-parse --abbrev-ref HEAD)"
+repo="$(basename `git rev-parse --show-toplevel`)"
 
-if [ "$branch" = "main" ]; then
+if [ "$branch" = "main" && "$repo" != "settings" ]; then
   echo "You can't commit directly to master branch"
   exit 1
 fi
