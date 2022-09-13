@@ -17,14 +17,6 @@ cd ~
 git clone https://github.com/heisencoder/settings.git
 ```
 
-### Git Settings
-
-Update git to point to the githooks directory
-
-```shell
-git config --global core.hooksPath ~/settings/githooks
-```
-
 2. Install the settings
 
 Beware!  This will add a lot of symlinks to your home directory!
@@ -36,6 +28,14 @@ cd settings
 
 Look for error messages about particular files already existing.  Delete these files
 (after you've confirmed that there aren't important changes you want to save) and rerun `install.sh`.
+
+### Git Settings
+
+Update git to point to the githooks directory:
+
+```shell
+git config --global core.hooksPath ~/settings/githooks
+```
 
 ## Development
 
