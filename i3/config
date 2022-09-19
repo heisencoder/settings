@@ -18,7 +18,7 @@
 # Use "Windows key" as the standard modifier
 set $mod Mod4
 
-set $google-chrome /usr/bin/google-chrome
+set $google-chrome /usr/bin/google-chrome-stable
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -86,12 +86,12 @@ bindsym $mod+Control+Return exec /home/matt/settings/fix
 
 # Start a Secure Shell Window
 # bindsym $mod+Shift+o exec $google-chrome --app=chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html#profile-id:b142
-bindsym $mod+Control+o exec $google-chrome --app=chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html
+bindsym $mod+Control+o exec /snap/bin/code
 
 # Start a Cider window
 # bindsym $mod+Shift+p exec $google-chrome --app=https://cider.corp.google.com/?chromeApp
 # Start an VSCode Window (install via `sudo apt install code`)
-bindsym $mod+Control+p exec /usr/bin/code
+# bindsym $mod+Control+p exec $google-chrome --app=chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html
 
 # Start a Hangouts window
 # bindsym $mod+Control+y exec $google-chrome --app=https://chat.google.com
@@ -103,11 +103,11 @@ bindsym $mod+Control+p exec /usr/bin/code
 
 # Hotkeys to autofocus a particular window type
 bindsym $mod+u [instance="oogle-chrome"] focus
-bindsym $mod+i [class="^Terminator|Alacritty$"] focus
-# Secure Shell Chrome App (omit the 'crx_' prefix to catch both ways of launching)
-bindsym $mod+o [instance="iodihamcpbpeioajjeobimgagajmlibd"] focus
+bindsym $mod+i [class="^Terminator|Alacritty|Gnome-terminal$"] focus
 # VSCode:
-bindsym $mod+p [instance="^code$"] focus
+bindsym $mod+o [instance="^code$"] focus
+# Zoom
+bindsym $mod+p [title="^Zoom Meeting$"] focus
 # Cider:
 bindsym $mod+y [instance="chat.google.com"] focus
 # Tasks:
@@ -265,7 +265,7 @@ bindsym $mod+Control+semicolon exec "i3lock -c 000050"
 
 bindsym $mod+Control+period resize shrink width 100 px or 10 ppt
 bindsym $mod+Control+m      resize grow height 160 px or 16 ppt
-bindsym $mod+Control+/      resize shrink height 160 px or 16 ppt
+bindsym $mod+Control+slash  resize shrink height 160 px or 16 ppt
 bindsym $mod+Control+comma  resize grow width 100 px or 10 ppt
 
 # See https://github.com/zoltanp/xrandr-invert-colors
@@ -327,7 +327,8 @@ exec xautolock -detectsleep -time 10 -locker "i3lock -c 000050" -notify 30 -noti
 # Enable compton, a compositing windows manager.  This requires having compton
 # installed (sudo apt-get install compton)
 # See http://unix.stackexchange.com/questions/136932/why-am-i-having-ghosting-and-tearing-with-the-i3-window-manager-paired-with-xcom
-exec --no-startup-id compton -CGb --backend glx --vsync opengl --inactive-dim 0.125
+# exec --no-startup-id compton -CGb --backend glx --vsync opengl --inactive-dim 0.125  #disabled due to making screen go black
+exec --no-startup-id compton --inactive-dim 0.125 --backend glx 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
