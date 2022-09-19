@@ -1,5 +1,5 @@
 #!/bin/sh
-xrandr --dpi 144
+xrandr --dpi 120
 # Start the imwheel app, which adjusts the mouse scroll speed.
 # To install: sudo apt install imwheel
 imwheel --kill
