@@ -189,3 +189,6 @@ if [ -f '/home/mball/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/mball/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/mball/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+
+# Disable Ctrl-S XON/XOFF. This allows Ctrl-S to be forward search. See https://stackoverflow.com/a/791800
+[[ $- == *i* ]] && stty -ixon
