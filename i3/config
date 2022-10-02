@@ -84,9 +84,9 @@ bindsym $mod+Control+u exec $google-chrome --enable-features=NativeNotifications
 # Fix the keyboard repeat rate.
 bindsym $mod+Control+Return exec /home/matt/settings/fix
 
-# Start a Secure Shell Window
+# Start Visual Studio Code (VSCode)
 # bindsym $mod+Shift+o exec $google-chrome --app=chrome-extension://pnhechapfaindjhompbnflcldabbghjo/html/nassh.html#profile-id:b142
-bindsym $mod+Control+o exec /snap/bin/code
+bindsym $mod+Control+o exec /snap/bin/code || /usr/bin/code
 
 # Start a Cider window
 # bindsym $mod+Shift+p exec $google-chrome --app=https://cider.corp.google.com/?chromeApp
