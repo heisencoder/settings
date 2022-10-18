@@ -257,10 +257,10 @@ bindsym $mod+Control+e exec "i3-nagbar -t warning -m 'You pressed the exit short
 #        bindsym $mod+r mode "default"
 #}
 
-#bindsym $mod+r mode "resize"
+# bindsym $mod+r mode "resize"
 
 # Matt's customizations to key bindings
-#bindsym Mod1+Control+l exec "cinnamon-screensaver-command --lock"
+# bindsym Mod1+Control+l exec "cinnamon-screensaver-command --lock"
 bindsym $mod+Control+semicolon exec "i3lock -c 000050"
 
 bindsym $mod+Control+period resize shrink width 100 px or 10 ppt
@@ -269,7 +269,10 @@ bindsym $mod+Control+slash  resize shrink height 160 px or 16 ppt
 bindsym $mod+Control+comma  resize grow width 100 px or 10 ppt
 
 # See https://github.com/zoltanp/xrandr-invert-colors
-bindsym $mod+comma exec "/usr/local/bin/xrandr-invert-colors"
+# bindsym $mod+comma exec "/usr/local/bin/xrandr-invert-colors"
+
+# Install with sudo apt install xcalib
+bindsym $mod+comma exec "/usr/bin/xcalib -invert -alter"
 # Commands to adjust which monitor is active.  This is only good for laptop
 # bindsym $mod+comma exec "xrandr --output eDP1 --off --output DP1 --auto"
 # bindsym $mod+Control+comma exec "xrandr --output eDP1 --auto --output DP1 --mode 1920x1080"
@@ -280,12 +283,12 @@ bindsym $mod+period exec "xrandr --output eDP-1 --off"
 bindsym $mod+slash exec "xrandr --auto"
 
 # Don't focus new windows or allow current windows to steal focus.
-#no_focus [class="."]
+# no_focus [class="."]
 # Don't let Hangouts window steal focus or be floating
 no_focus [instance="chat.google.com"]
 for_window [instance="chat.google.com"] floating disable
-#focus_on_window_activation urgent
-#focus_on_window_activation none
+# focus_on_window_activation urgent
+# focus_on_window_activation none
 
 # Hide window borders on edge of screen.
 hide_edge_borders both
