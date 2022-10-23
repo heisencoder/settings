@@ -184,11 +184,13 @@ if [ -f ~/.git-prompt.sh ]; then
   source ~/.git-prompt.sh
 fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/mball/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/mball/Downloads/google-cloud-sdk/path.bash.inc'; fi
+if [ -e ~/.cargo/bin ]; then
+  PATH=~/.cargo/bin:${PATH}
+fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/mball/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/mball/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+if [ -e ~/bin ]; then
+  PATH=~/bin:${PATH}
+fi
 
 # Disable Ctrl-S XON/XOFF. This allows Ctrl-S to be forward search. See https://stackoverflow.com/a/791800
 [[ $- == *i* ]] && stty -ixon
