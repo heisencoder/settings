@@ -20,8 +20,9 @@ CONFIG_FILES='
 # These directories will be linked to ~/.config
 CONFIG_DIRS='
   alacritty
-  i3
   dunst
+  i3
+  leftwm
   terminator
 '
 
