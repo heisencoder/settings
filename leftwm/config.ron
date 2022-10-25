@@ -49,7 +49,7 @@
     disable_current_tag_swap: false,
     disable_tile_drag: false,
     disable_window_snap: true,
-    focus_behaviour: Driven,
+    focus_behaviour: ClickTo,
     focus_new_windows: false,
     sloppy_mouse_follows_focus: true,
     keybind: [
