@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 #
 # Install these packages to fully enable shortcuts in this file:
-# sudo apt install xss-lock xbacklight terminator scrot xautolock gnome-control-center
+# sudo apt install xss-lock xbacklight terminator scrot xautolock gnome-control-center xcalib compton
 #
 # Also, build these packages:
 # https://github.com/zoltanp/xrandr-invert-colors
