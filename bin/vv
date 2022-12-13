@@ -1,0 +1,14 @@
+# Simple script to remove all local Git developer branches
+# that are not present on remote server.  This also resets
+# the current branch to 'main'.
+
+set -e
+
+MAIN_BRANCH='main'
+
+git checkout $MAIN_BRANCH
+git pull --prune
+for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do 
+  git branch -D $branch; 
+done
+
