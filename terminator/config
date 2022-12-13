@@ -1,5 +1,6 @@
 [global_config]
   borderless = True
+  invert_search = True
 [keybindings]
 [profiles]
   [[default]]
