@@ -289,6 +289,7 @@ no_focus [instance="chat.google.com"]
 for_window [instance="chat.google.com"] floating disable
 # Don't let Zoom steal focus
 no_focus [title="Zoom"]
+no_focus [title="zoom"]
 no_focus [title="join"]
 # focus_on_window_activation urgent
 # focus_on_window_activation none
@@ -351,4 +352,7 @@ bar {
 # Run the gnome sounds applet for volume control
 # This is part of the gnome-control-center package
 exec --no-startup-id /usr/bin/gnome-sound-applet
+
+# Set up mouse and keyboard repeat
+exec --no-startup-id /home/matt/settings/fix
 
