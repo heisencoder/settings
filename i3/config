@@ -288,7 +288,7 @@ bindsym $mod+slash exec "xrandr --auto"
 no_focus [instance="chat.google.com"]
 for_window [instance="chat.google.com"] floating disable
 # Don't let Zoom steal focus
-no_focus [title="Zoom"]
+no_focus [title="^Zoom$"]
 no_focus [title="zoom"]
 no_focus [title="join"]
 # focus_on_window_activation urgent
