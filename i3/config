@@ -93,8 +93,8 @@ bindsym $mod+Control+o exec /snap/bin/code || /usr/bin/code
 # Start an VSCode Window (install via `sudo apt install code`)
 # bindsym $mod+Control+p exec $google-chrome --app=chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html
 
-# Start a Hangouts window
-# bindsym $mod+Control+y exec $google-chrome --app=https://chat.google.com
+# Start Sunsama
+bindsym $mod+Control+y exec $google-chrome --app=https://app.sunsama.com/group/heisencoder
 
 # Start a Tasks Window as an app
 # bindsym $mod+Shift+t exec $google-chrome --app=https://tasks.google.com/embed/list/~default?fullWidth=1
@@ -108,8 +108,8 @@ bindsym $mod+i [class="^Terminator|Alacritty|Gnome-terminal$"] focus
 bindsym $mod+o [instance="^code$"] focus
 # Zoom
 bindsym $mod+p [title="^Zoom Meeting$"] focus
-# Cider:
-bindsym $mod+y [instance="chat.google.com"] focus
+# Sunsama:
+bindsym $mod+y [title="^Sunsama$"] focus
 # Tasks:
 # bindsym $mod+t [instance="tasks.google.com__embed_list__default"] focus
 bindsym $mod+t [instance="g3c.corp.google.com"] focus
