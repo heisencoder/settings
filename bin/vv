@@ -6,6 +6,7 @@ set -e
 
 MAIN_BRANCH='main'
 
+git fetch --all
 git checkout $MAIN_BRANCH
 git pull --prune
 for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do 
