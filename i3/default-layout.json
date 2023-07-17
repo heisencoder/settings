@@ -1,0 +1,190 @@
+// vim:ts=4:sw=4:et
+{
+    // splith split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "marks": [],
+    "percent": 0.82,
+    "type": "con",
+    "nodes": [
+        {
+            // tabbed split container with 2 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "tabbed",
+            "marks": [],
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 5,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 1728,
+                       "width": 1918,
+                       "x": 1925,
+                       "y": 21
+                    },
+                    "marks": [],
+                    "name": "wrk - Visual Studio Code",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                       // "class": "^Code$",
+                       "instance": "^code$",
+                       // "machine": "^matt\\-Precision\\-5760$",
+                       // "title": "^wrk\\ \\-\\ Visual\\ Studio\\ Code$",
+                       // "window_role": "^browser\\-window$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 5,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 1726,
+                       "width": 1915,
+                       "x": 1925,
+                       "y": 21
+                    },
+                    "marks": [],
+                    "name": "[PE-3132] SSM Prd insight notification text or email fails to send, displays dbmanager error message - JIRA - Google Chrome",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                       // "class": "^Google\\-chrome$",
+                       "instance": "oogle\\-chrome",
+                       // "machine": "^matt\\-Precision\\-5760$",
+                       // "title": "^\\[PE\\-3132\\]\\ SSM\\ Prd\\ insight\\ notification\\ text\\ or\\ email\\ fails\\ to\\ send\\,\\ displays\\ dbmanager\\ error\\ message\\ \\-\\ JIRA\\ \\-\\ Google\\ Chrome$",
+                       // "window_role": "^browser$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            // tabbed split container with 1 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "tabbed",
+            "marks": [],
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 5,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 1726,
+                       "width": 1915,
+                       "x": 1925,
+                       "y": 21
+                    },
+                    "marks": [],
+                    "name": "i3: Layout saving in i3 - Google Chrome",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       // "class": "^Google\\-chrome$",
+                       "instance": "oogle\\-chrome",
+                       // "machine": "^matt\\-Precision\\-5760$",
+                       // "title": "^i3\\:\\ Layout\\ saving\\ in\\ i3\\ \\-\\ Google\\ Chrome$",
+                       // "window_role": "^browser$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
+{
+    // splith split container with 3 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "marks": [],
+    "percent": 0.18,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 5,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1726,
+               "width": 1915,
+               "x": 1925,
+               "y": 33
+            },
+            "marks": [],
+            "name": "New Agathos Time Tracking - Google Sheets",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+               // "class": "^Google\\-chrome$",
+               "instance": "^crx_aomdpchcfefggfhmgokbjfmlhbidkkkc$",
+               // "machine": "^matt\\-Precision\\-5760$",
+               // "title": "^New\\ Agathos\\ Time\\ Tracking\\ \\-\\ Google\\ Sheets$",
+               // "window_role": "^pop\\-up$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 5,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 380,
+               "width": 1915,
+               "x": 1925,
+               "y": 1755
+            },
+            "marks": [],
+            "name": "Sunsama",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+               // "class": "^Google\\-chrome$",
+               "instance": "^app\\.sunsama\\.com__group_heisencoder$",
+               // "machine": "^matt\\-Precision\\-5760$",
+               "title": "^Sunsama$",
+               // "window_role": "^pop\\-up$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 5,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 577,
+               "width": 894,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "matt-Precision-5760: ~/wrk/agathos-health/db-manager",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+               "class": "^Terminator|Alacritty|Gnome-terminal$",
+               // "instance": "^terminator$",
+               // "machine": "^matt\\-Precision\\-5760$",
+               // "title": "^matt\\-Precision\\-5760\\:\\ \\~\\/wrk\\/agathos\\-health\\/db\\-manager$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
