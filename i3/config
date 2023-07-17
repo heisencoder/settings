@@ -94,7 +94,8 @@ bindsym $mod+Control+o exec /snap/bin/code || /usr/bin/code
 # bindsym $mod+Control+p exec $google-chrome --app=chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html
 
 # Start Sunsama
-bindsym $mod+Control+y exec $google-chrome --app=https://app.sunsama.com/group/heisencoder
+# bindsym $mod+Control+y exec $google-chrome --app=https://app.sunsama.com/group/heisencoder
+bindsym $mod+Control+y exec /home/matt/bin/sunsama || $google-chrome --app=https://app.sunsama.com/group/heisencoder
 
 # Start a Tasks Window as an app
 # bindsym $mod+Shift+t exec $google-chrome --app=https://tasks.google.com/embed/list/~default?fullWidth=1
