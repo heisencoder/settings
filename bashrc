@@ -188,6 +188,10 @@ if [ -e ~/.cargo/bin ]; then
   PATH=~/.cargo/bin:${PATH}
 fi
 
+if [ -e ~/.local/bin ]; then
+  PATH=~/.local/bin:${PATH}
+fi
+
 if [ -e ~/bin ]; then
   PATH=~/bin:${PATH}
 fi
