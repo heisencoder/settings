@@ -6,9 +6,9 @@ set -e
 
 MAIN_BRANCH='main'
 
-git fetch --all
+git fetch --prune --all --prune-tags
 git checkout $MAIN_BRANCH
-git pull --prune
+git merge --all
 for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do 
   git branch -D $branch; 
 done
