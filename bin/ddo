@@ -3,7 +3,7 @@
 # This utility performs a given command in each subdirectory of the current directory
 
 for d in *; do
-  if [ -d $d ]; then
+  if [ -d $d ] && [ "$d" != "tmp" ]; then
     cd $d
     echo
     echo "[${d}]"
