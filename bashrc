@@ -212,10 +212,10 @@ gitsed() {
 }
 
 # Setup platform-specific environment
-if [ -f ~/.bashrc.`hostname -a` ]; then
-  source ~/.bashrc.`hostname -a`
-elif [ -f ~/settings/bashrc.`hostname -a` ]; then
-  source ~/settings/bashrc.`hostname -a`
+if [ -f "~/.bashrc.`hostname -a`" ]; then
+  source "~/.bashrc.`hostname -a`"
+elif [ -f "~/settings/bashrc.`hostname -a`" ]; then
+  source "~/settings/bashrc.`hostname -a`"
 fi
 
 # Manually run git-prompt shell if on mac
@@ -241,3 +241,5 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+echo "finished running .bashrc"
