@@ -77,7 +77,8 @@ floating_modifier $mod
 bindsym $mod+Control+i exec /usr/bin/alacritty || /usr/bin/terminator || /usr/bin/gnome-terminal || i3-sensible-terminal
 
 # Start a Chrome window
-bindsym $mod+Control+u exec $google-chrome --enable-features=NativeNotifications
+# Adding flag to disable new Chrome 125 UI updates (See https://geekermag.com/how-to-disable-google-chrome-new-ui-refresh-2023/)
+bindsym $mod+Control+u exec $google-chrome --enable-features=NativeNotifications --disable-features=CustomizeChromeSidePanel
 # Take a break from personal profile.
 # bindsym $mod+Control+Return exec $google-chrome --user-data-dir=.config/chrome-personal
 
