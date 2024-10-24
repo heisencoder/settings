@@ -150,35 +150,56 @@ function __parse_git_dirty {
   fi
 }
 
+# See https://github.com/jcgoble3/gitstuff/blob/master/gitprompt.sh
+git_status() {
+    # Outputs a series of indicators based on the status of the
+    # working directory:
+    # + changes are staged and ready to commit
+    # ! unstaged changes are present
+    # ? untracked files are present
+    # S changes have been stashed
+    # P local commits need to be pushed to the remote
+    local status="$(git status --porcelain 2>/dev/null)"
+    if [[ -n $status ]]; then
+        local output=''
+        [[ -n $(egrep '^[MADRC]' <<<"$status") ]] && output="$output+"
+        [[ -n $(egrep '^.[MD]' <<<"$status") ]] && output="$output!"
+        [[ -n $(egrep '^\?\?' <<<"$status") ]] && output="$output?"
+        [[ -n $(git stash list) ]] && output="${output}S"
+        [[ -n $(git log --branches --not --remotes) ]] && output="${output}P"
+        echo $output
+    fi
+}
+
 # Put the git repository into the prompt
 bash_prompt() {
 
   # regular colors
-  local K="\[\033[0;30m\]"    # black
-  local R="\[\033[0;31m\]"    # red
-  local G="\[\033[0;32m\]"    # green
-  local Y="\[\033[0;33m\]"    # yellow
-  local B="\[\033[0;34m\]"    # blue
-  local M="\[\033[0;35m\]"    # magenta
-  local C="\[\033[0;36m\]"    # cyan
-  local W="\[\033[0;37m\]"    # white
+  local K='\[\033[0;30m\]'    # black
+  local R='\[\033[0;31m\]'    # red
+  local G='\[\033[0;32m\]'    # green
+  local Y='\[\033[0;33m\]'    # yellow
+  local B='\[\033[0;34m\]'    # blue
+  local M='\[\033[0;35m\]'    # magenta
+  local C='\[\033[0;36m\]'    # cyan
+  local W='\[\033[0;37m\]'    # white
 
   # emphasized (bolded) colors
-  local BK="\[\033[1;30m\]"
-  local BR="\[\033[1;31m\]"
-  local BG="\[\033[1;32m\]"
-  local BY="\[\033[1;33m\]"
-  local BB="\[\033[1;34m\]"
-  local BM="\[\033[1;35m\]"
-  local BC="\[\033[1;36m\]"
-  local BW="\[\033[1;37m\]"
+  local BK='\[\033[1;30m\]'
+  local BR='\[\033[1;31m\]'
+  local BG='\[\033[1;32m\]'
+  local BY='\[\033[1;33m\]'
+  local BB='\[\033[1;34m\]'
+  local BM='\[\033[1;35m\]'
+  local BC='\[\033[1;36m\]'
+  local BW='\[\033[1;37m\]'
 
   # reset
-  local RESET="\[\033[0;37m\]"
+  local RESET='\[\033[0;37m\]'
 
-  # PS1="\t $BY\$(__name_and_server)$Y\W $G\$(__git_prompt)$RESET$ "
- # PS1='\[\e]0;\h: \w\a\]\n$(__error_level) ${debian_chroot:+($debian_chroot)}$BY\u@\h$K: $BB\w [\D{%a} \t]$BG$(__git_ps1) ${timer_show}s\n$K\$ '
- PS1='\[\e]0;\h: \w\a\]\n$(__error_level) ${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w [\D{%a} \t]\[\033[01;32m\]$(__git_ps1) ${timer_show}s\n\[\033[00m\]\$ '
+ # PS1="\t $BY\$(__name_and_server)$Y\W $G\$(__git_prompt)$RESET$ "
+ # PS1='\[\e]0;\h: \w\a\]\n$(__error_level) ${debian_chroot:+($debian_chroot)}${BY}\u@\h${K}: ${BB}\w [\D{%a} \t]${BG}$(__git_ps1) ${timer_show}s\n${K}\$ '
+ PS1='\[\e]0;\h: \w\a\]\n$(__error_level) ${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w [\D{%a} \t]\[\033[01;32m\]$(__git_ps1)$(git_status) ${timer_show}s\n\[\033[00m\]\$ '
 }
 
 bash_prompt
