@@ -284,6 +284,9 @@ bindsym $mod+period exec "xrandr --output eDP-1 --off"
 # This will automatically activate all monitors
 bindsym $mod+slash exec "xrandr --auto"
 
+# Close notifications
+bindsym $mod+minus exec "dunstctl close"
+
 # Don't focus new windows or allow current windows to steal focus.
 # no_focus [class="."]
 # Don't let Hangouts window steal focus or be floating
