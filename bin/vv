@@ -6,7 +6,8 @@ set -e
 
 MAIN_BRANCH='main'
 
-git fetch --prune --all --prune-tags
+# git fetch --prune --all --prune-tags  # for now, don't use --prune-tags because it pulls tag even when disabled with --no-tags
+git fetch --prune --all
 git checkout $MAIN_BRANCH
 git merge --all
 for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do 
