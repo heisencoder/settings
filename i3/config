@@ -107,7 +107,7 @@ bindsym $mod+Control+y exec /home/matt/bin/sunsama || $google-chrome --app=https
 bindsym $mod+u [instance="oogle-chrome"] focus
 bindsym $mod+i [class="^Terminator|Alacritty|Gnome-terminal$"] focus
 # VSCode:
-bindsym $mod+o [instance="^code$"] focus
+bindsym $mod+o [instance="^code|cursor$"] focus
 # Zoom
 bindsym $mod+p [title="^Zoom Meeting$"] focus
 # Sunsama:
