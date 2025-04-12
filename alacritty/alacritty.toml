@@ -1,0 +1,42 @@
+live_config_reload = true
+
+[colors.bright]
+black = "#666666"
+blue = "#77aadd"
+cyan = "#77bbbb"
+green = "#bbcc44"
+magenta = "#cc99dd"
+red = "#dd4455"
+white = "#eeeeee"
+yellow = "#eecc44"
+
+[colors.normal]
+black = "#222222"
+blue = "#4433ee"
+cyan = "#228888"
+green = "#55aa55"
+magenta = "#994499"
+red = "#cc4444"
+white = "#cccccc"
+yellow = "#aa9933"
+
+[colors.primary]
+background = "#ffffff"
+foreground = "#101010"
+
+[cursor]
+vi_mode_style = "Underline"
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Insert"
+mods = "Control"
