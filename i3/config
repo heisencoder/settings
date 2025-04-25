@@ -356,6 +356,7 @@ bar {
 
 # Run the gnome sounds applet for volume control
 # This is part of the gnome-control-center package
+# Also, install pavucontrol
 exec --no-startup-id /usr/bin/gnome-sound-applet
 
 # Set up mouse and keyboard repeat
