@@ -1,11 +1,19 @@
 #!/bin/sh
 
+echo "running global hook $1"
+protected_branch="main"
+
 branch="$(git rev-parse --abbrev-ref HEAD)"
 repo="$(basename `git rev-parse --show-toplevel`)"
-
-protected_branch="main"
 
 if [ "$branch" = "$protected_branch" ] && [ "$repo" != "settings" ]; then
   echo "You can't commit directly to $protected_branch branch"
   exit 1
 fi
+
+# Run local hook if it exists
+# HOOK=./.git/hooks/$1
+# if [ -e $HOOK ]; then
+  # echo "running local hook $HOOK"
+  # $HOOK "$@"
+# fi

@@ -160,15 +160,15 @@ git_status() {
     # S changes have been stashed
     # P local commits need to be pushed to the remote
     local status="$(git status --porcelain 2>/dev/null)"
+    local output=''
     if [[ -n $status ]]; then
-        local output=''
         [[ -n $(egrep '^[MADRC]' <<<"$status") ]] && output="$output+"
         [[ -n $(egrep '^.[MD]' <<<"$status") ]] && output="$output!"
         [[ -n $(egrep '^\?\?' <<<"$status") ]] && output="$output?"
-        [[ -n $(git stash list) ]] && output="${output}S"
-        [[ -n $(git log --branches --not --remotes) ]] && output="${output}P"
-        echo $output
     fi
+    [[ -n $(git stash list 2>/dev/null) ]] && output="${output}S"
+    [[ -n $(git log --branches --not --remotes 2>/dev/null) ]] && output="${output}P"
+    echo $output
 }
 
 # Put the git repository into the prompt
@@ -221,6 +221,7 @@ alias cd3='cd ../../..'
 alias cd4='cd ../../../..'
 alias cd5='cd ../../../../..'
 alias cd6='cd ../../../../../..'
+alias gt='git town'
 
 # Search and replace within git
 # $1 = search string, $2 = replace string
@@ -262,5 +263,8 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# By default, allow the write attribute for groups to assist with using rootless docker
+umask 002
 
 echo "finished running .bashrc"
