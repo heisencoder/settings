@@ -13,6 +13,7 @@ CONFIG_FILES='
   imwheelrc
   inputrc
   profile
+  tmux.conf
   vimrc
   xsession
 '
