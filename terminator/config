@@ -5,11 +5,12 @@
 [profiles]
   [[default]]
     background_color = "#ffffff"
-    cursor_color = "#aaaaaa"
+    font = Monospace 11
     foreground_color = "#000000"
     show_titlebar = False
     scrollback_lines = 500000
     login_shell = True
+    use_system_font = False
 [layouts]
   [[default]]
     [[[window0]]]
