@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 #
 # Install these packages to fully enable shortcuts in this file:
-# sudo apt install gnome-control-center imwheel picom playerctl pulseaudio-utils scrot terminator v4l-utils xautolock xbacklight xcalib xclip xss-lock
+# sudo apt install gnome-control-center imwheel picom playerctl pulseaudio-utils redshift scrot terminator v4l-utils xautolock xbacklight xcalib xclip xss-lock
 #
 # Also, build these packages:
 # https://github.com/zoltanp/xrandr-invert-colors
@@ -280,7 +280,9 @@ bindsym $mod+comma exec "/usr/bin/xcalib -invert -alter"
 # bindsym $mod+Control+comma exec "xrandr --output eDP1 --auto --output DP1 --mode 1920x1080"
 # bindsym $mod+period exec "xrandr --fb 1920x1080 --output eDP1 --mode 1920x1080"
 # bindsym $mod+slash exec "xrandr --output LVDS1 --auto --right-of HDMI3"
-bindsym $mod+period exec "xrandr --output eDP-1 --off"
+# bindsym $mod+period exec "xrandr --output eDP-1 --off"
+# bindsym $mod+period exec "xrandr --output HDMI-1 --mode 3840x2160 --output eDP-1 --off"
+bindsym $mod+period exec "xrandr --output DP-2 --mode 3840x2160 --output eDP-1 --off"
 # This will automatically activate all monitors
 bindsym $mod+slash exec "xrandr --auto"
 
