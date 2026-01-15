@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 #
 # Install these packages to fully enable shortcuts in this file:
-# sudo apt install gnome-control-center imwheel picom playerctl pulseaudio-utils redshift scrot terminator v4l-utils xautolock xbacklight xcalib xclip xss-lock
+# sudo apt install blueman gnome-control-center imwheel picom playerctl pulseaudio-utils redshift scrot terminator v4l-utils xautolock xbacklight xcalib xclip xss-lock
 #
 # Also, build these packages:
 # https://github.com/zoltanp/xrandr-invert-colors
@@ -38,6 +38,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- "i3lock -c 000050" --nofo
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# Add a Bluetooth system tray icon.  Install: sudo apt install blueman
+exec --no-startup-id blueman-applet
 
 # Use pactl to adjust volume in PulseAudio (sudo apt install pulseaudio-utils)
 set $refresh_i3status killall -SIGUSR1 i3status
