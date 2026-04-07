@@ -24,6 +24,7 @@ CONFIG_DIRS='
   dunst
   i3
   leftwm
+  sway
   terminator
 '
 
