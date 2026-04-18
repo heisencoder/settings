@@ -7,7 +7,7 @@
 # Usage: ggo [new-branch-name]
 
 DEFAULT=main
-PREFIX=mball/
+PREFIX=
 NEW_BRANCH=${PREFIX}$1
 
 set -e # Exit on error
