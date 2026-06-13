@@ -199,7 +199,7 @@ bash_prompt() {
 
  # PS1="\t $BY\$(__name_and_server)$Y\W $G\$(__git_prompt)$RESET$ "
  # PS1='\[\e]0;\h: \w\a\]\n$(__error_level) ${debian_chroot:+($debian_chroot)}${BY}\u@\h${K}: ${BB}\w [\D{%a} \t]${BG}$(__git_ps1) ${timer_show}s\n${K}\$ '
- PS1='\[\e]0;\h: \w\a\]\n$(__error_level) ${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w [\D{%a} \t]\[\033[01;32m\]$(__git_ps1)$(git_status) ${timer_show}s\n\[\033[00m\]\$ '
+ PS1='\[\e]0;\u@\h: \w\a\]\n$(__error_level) ${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w [\D{%a} \t]\[\033[01;32m\]$(__git_ps1)$(git_status) ${timer_show}s\n\[\033[00m\]\$ '
 }
 
 bash_prompt
