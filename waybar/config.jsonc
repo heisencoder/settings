@@ -17,6 +17,9 @@
         // "sway/scratchpad",
         "hyprland/workspaces",
         "hyprland/submap",
+        "custom/media-prev",
+        "custom/media-play",
+        "custom/media-next",
         "custom/media"
     ],
     "modules-center": [
@@ -207,6 +210,36 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    // Media buttons next to "now playing"; hidden when nothing is playing.
+    "custom/media-prev": {
+        "format": "",
+        "exec": "~/.config/waybar/scripts/media-status.sh",
+        "return-type": "json",
+        "hide-empty-text": true,
+        "on-click": "playerctl previous",
+        "tooltip": false
+    },
+    "custom/media-play": {
+        "format": "{icon}",
+        "format-icons": {
+            "Playing": "",
+            "Paused": "",
+            "Stopped": ""
+        },
+        "exec": "~/.config/waybar/scripts/media-status.sh",
+        "return-type": "json",
+        "hide-empty-text": true,
+        "on-click": "playerctl play-pause",
+        "tooltip": false
+    },
+    "custom/media-next": {
+        "format": "",
+        "exec": "~/.config/waybar/scripts/media-status.sh",
+        "return-type": "json",
+        "hide-empty-text": true,
+        "on-click": "playerctl next",
+        "tooltip": false
     },
     "custom/media": {
         "format": "{icon} {text}",

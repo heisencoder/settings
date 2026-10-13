@@ -405,3 +405,27 @@ tooltip {
 tooltip label {
     color: #111188;
 }
+
+/* Media buttons: one group with "now playing", separators only around it. */
+#custom-media-prev,
+#custom-media-play,
+#custom-media-next {
+    padding: 0 6px;
+    color: #111188;
+    background-color: transparent;
+}
+
+#custom-media-prev {
+    border-left: 1px solid #e0e0e0;
+}
+
+#custom-media-prev:hover,
+#custom-media-play:hover,
+#custom-media-next:hover {
+    background-color: #e8eeff;
+}
+
+#custom-media {
+    border-left: none;
+    min-width: 0;
+}
