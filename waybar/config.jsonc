@@ -7,7 +7,8 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     // Bottom edge like i3bar, so the top screen edge belongs to windows.
     "position": "bottom",
-    "height": 30, // Waybar height (to be removed for auto height)
+    // "height": 30, // Waybar height (to be removed for auto height)
+    "height": 38, // 1.25x, to match the 1x display scale
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -250,7 +251,9 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "/usr/share/waybar/custom_modules/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "/usr/share/waybar/custom_modules/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // Same script, minus its HTML escaping (which made "&" show up as "&amp;").
+        "exec": "~/.config/waybar/scripts/media-title.sh"
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
