@@ -335,8 +335,9 @@ label:focus {
 window#waybar,
 window#waybar.termite,
 window#waybar.chromium {
-    /* 85% gray, close to an inactive (dimmed) window, so the bar looks inactive too. */
-    background-color: #d9d9d9;
+    /* 87.5% gray: a white window dimmed by dim_strength 0.125, so the bar
+     * looks like the other inactive windows. */
+    background-color: #dfdfdf;
     border-top: 1px solid #bfbfbf;
     border-bottom: none;
     color: #111188;
