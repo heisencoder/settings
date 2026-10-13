@@ -332,6 +332,11 @@ label:focus {
  * (urgent, critical, muted, charging, ...).
  * --------------------------------------------------------------------- */
 
+* {
+    /* 1.25x the sample's 13px, to match the 1x display scale. */
+    font-size: 16px;
+}
+
 window#waybar,
 window#waybar.termite,
 window#waybar.chromium {
