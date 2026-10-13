@@ -1,0 +1,25 @@
+# Matt's mako config (notifications under Hyprland).  mako ships no sample
+# config, so there's no baseline copy.  See `man 5 mako`.
+#
+# White cards in the top-right corner with a blue edge: easy to spot out of
+# the corner of your eye, gone after 10 seconds.
+# Dismiss: $mod+minus (newest), $mod+Ctrl+minus (all).
+
+font=monospace 10
+background-color=#ffffff
+text-color=#333333
+border-color=#5588ff
+border-size=3
+border-radius=0
+padding=8
+margin=8
+width=380
+anchor=top-right
+default-timeout=10000
+
+[urgency=low]
+border-color=#cccccc
+
+[urgency=critical]
+border-color=#ff0000
+default-timeout=0

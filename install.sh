@@ -22,10 +22,14 @@ CONFIG_FILES='
 CONFIG_DIRS='
   alacritty
   dunst
+  fuzzel
+  hypr
   i3
   leftwm
+  mako
   sway
   terminator
+  waybar
 '
 
 BIN_FILES='

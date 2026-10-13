@@ -325,3 +325,83 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+
+/* ------------------------------------------------------------------------
+ * Matt's light theme: overrides the sample styles above.  White bar, dark
+ * text, no colored module blocks; color is used only to flag a state
+ * (urgent, critical, muted, charging, ...).
+ * --------------------------------------------------------------------- */
+
+window#waybar,
+window#waybar.termite,
+window#waybar.chromium {
+    background-color: #ffffff;
+    border-top: 1px solid #cccccc;
+    border-bottom: none;
+    color: #111188;
+}
+
+button:hover {
+    box-shadow: inset 0 -3px #5588ff;
+}
+
+#workspaces button {
+    color: #111188;
+}
+
+#workspaces button:hover {
+    background: #e8eeff;
+}
+
+#workspaces button.focused, #workspaces button.active {
+    background-color: #5588ff;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+#workspaces button.urgent {
+    background-color: #900000;
+    color: #ffffff;
+}
+
+#mode, #submap {
+    background-color: #5588ff;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+#clock, #battery, #cpu, #memory, #disk, #temperature, #backlight, #network,
+#pulseaudio, #wireplumber, #custom-media, #tray, #idle_inhibitor,
+#power-profiles-daemon, #keyboard-state, #language, #custom-power,
+#pulseaudio:hover {
+    background-color: transparent;
+    color: #111188;
+    border-left: 1px solid #e0e0e0;
+}
+
+#window {
+    color: #333333;
+}
+
+#battery.charging, #battery.plugged { color: #1a7f3c; background-color: transparent; }
+#battery.warning:not(.charging)    { color: #b06000; }
+#battery.critical:not(.charging)   { color: #ffffff; background-color: #cc0000; animation: none; }
+#temperature.critical               { color: #cc0000; }
+#network.disconnected               { color: #cc0000; }
+#pulseaudio.muted                   { color: #999999; }
+#idle_inhibitor.activated           { color: #ffffff; background-color: #5588ff; }
+#power-profiles-daemon.performance  { color: #cc0000; background-color: transparent; }
+#power-profiles-daemon.balanced     { color: #111188; background-color: transparent; }
+#power-profiles-daemon.power-saver  { color: #1a7f3c; background-color: transparent; }
+#keyboard-state > label.locked      { background: #e8eeff; }
+#tray > .needs-attention            { background-color: #ffdddd; }
+
+tooltip {
+    background-color: #ffffff;
+    color: #111188;
+    border: 1px solid #cccccc;
+}
+
+tooltip label {
+    color: #111188;
+}
