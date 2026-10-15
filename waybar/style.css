@@ -327,16 +327,23 @@ label:focus {
 }
 
 /* ------------------------------------------------------------------------
- * Matt's light theme: overrides the sample styles above.  White bar, dark
+ * Matt's light theme: overrides the sample styles above.  Light gray bar, dark
  * text, no colored module blocks; color is used only to flag a state
  * (urgent, critical, muted, charging, ...).
  * --------------------------------------------------------------------- */
 
+* {
+    /* 1.25x the sample's 13px, to match the 1x display scale. */
+    font-size: 16px;
+}
+
 window#waybar,
 window#waybar.termite,
 window#waybar.chromium {
-    background-color: #ffffff;
-    border-top: 1px solid #cccccc;
+    /* 87.5% gray: a white window dimmed by dim_strength 0.125, so the bar
+     * looks like the other inactive windows. */
+    background-color: #dfdfdf;
+    border-top: 1px solid #bfbfbf;
     border-bottom: none;
     color: #111188;
 }
@@ -376,11 +383,11 @@ button:hover {
 #pulseaudio:hover {
     background-color: transparent;
     color: #111188;
-    border-left: 1px solid #e0e0e0;
+    border-left: 1px solid #bfbfbf;
 }
 
 #window {
-    color: #333333;
+    color: #111188;
 }
 
 #battery.charging, #battery.plugged { color: #1a7f3c; background-color: transparent; }
@@ -416,7 +423,7 @@ tooltip label {
 }
 
 #custom-media-prev {
-    border-left: 1px solid #e0e0e0;
+    border-left: 1px solid #bfbfbf;
 }
 
 #custom-media-prev:hover,
@@ -428,4 +435,10 @@ tooltip label {
 #custom-media {
     border-left: none;
     min-width: 0;
+}
+
+/* The sample's padding rule above doesn't cover the power button, and its
+ * glyph is slightly wider than its slot, so give it room on both sides. */
+#custom-power {
+    padding: 0 8px 0 10px;
 }

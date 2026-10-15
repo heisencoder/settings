@@ -5,15 +5,15 @@
 # the corner of your eye, gone after 10 seconds.
 # Dismiss: $mod+minus (newest), $mod+Ctrl+minus (all).
 
-font=monospace 10
+font=monospace 12.5
 background-color=#ffffff
 text-color=#333333
 border-color=#5588ff
 border-size=3
 border-radius=0
-padding=8
-margin=8
-width=380
+padding=10
+margin=10
+width=475
 anchor=top-right
 default-timeout=10000
 
