@@ -10,7 +10,7 @@
 -- sudo apt install hyprland xdg-desktop-portal-hyprland hyprlock hypridle hyprpolkitagent \
 --   waybar fuzzel mako-notifier libnotify-bin grim slurp wl-clipboard brightnessctl \
 --   playerctl gammastep jq blueman fonts-font-awesome gir1.2-playerctl-2.0 pavucontrol \
---   hyprland-qtutils socat ddcutil
+--   hyprland-qtutils socat ddcutil network-manager-applet
 
 -- Please note not all available settings / options are set here.
 -- For a full list, see the wiki
@@ -66,12 +66,10 @@ local scripts     = "~/.config/hypr/scripts"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
--- hl.on("hyprland.start", function ()
---   hl.exec_cmd(terminal)
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
--- end)
 hl.on("hyprland.start", function ()
+--   hl.exec_cmd(terminal)
+    hl.exec_cmd("nm-applet")
+--   hl.exec_cmd("waybar & hyprpaper & firefox")
     hl.exec_cmd("waybar")
     hl.exec_cmd("mako")
     hl.exec_cmd("hypridle")
