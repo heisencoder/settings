@@ -72,7 +72,7 @@ hl.on("hyprland.start", function ()
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
     hl.exec_cmd("waybar")
     hl.exec_cmd("mako")
-    hl.exec_cmd("hypridle")
+    -- hl.exec_cmd("hypridle") -- Don't start this separately; it's already started by systemd when installing hypridle
     -- Undo a fade before the lock that was never restored (see hypridle.conf).
     hl.exec_cmd(scripts .. "/dim.sh restore")
     hl.exec_cmd("blueman-applet")
