@@ -70,13 +70,16 @@ hl.on("hyprland.start", function ()
 --   hl.exec_cmd(terminal)
     hl.exec_cmd("nm-applet")
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
-    hl.exec_cmd("waybar")
-    hl.exec_cmd("mako")
+    -- As a systemd service, so that it restarts if it crashes, and stopping or
+    -- restarting it (including at logout) also stops its module scripts.
+    -- Started rather than enabled, so that it only runs in Hyprland.
+    hl.exec_cmd("systemctl --user start waybar")
+    -- hl.exec_cmd("mako") -- Don't start this separately; it's already started by systemd when installing mako-notifier
     -- hl.exec_cmd("hypridle") -- Don't start this separately; it's already started by systemd when installing hypridle
     -- Undo a fade before the lock that was never restored (see hypridle.conf).
     hl.exec_cmd(scripts .. "/dim.sh restore")
     hl.exec_cmd("blueman-applet")
-    hl.exec_cmd("systemctl --user start hyprpolkitagent")
+    -- hl.exec_cmd("systemctl --user start hyprpolkitagent") -- Already started by systemd when installing hyprpolkitagent
     -- Laptop screen off while an external monitor is connected (also on hotplug).
     hl.exec_cmd(scripts .. "/monitors.sh watch")
 end)
@@ -523,8 +526,8 @@ hl.bind("mouse:276", hl.dsp.no_op())
 
 -- Session: reload, relaunch waybar, exit, lock, lock + suspend
 hl.bind(mainMod .. " + CTRL + C",         hl.dsp.exec_cmd("hyprctl reload"))  -- hl.dsp.reload_config() is 0.57+
--- Wait for the old waybar to exit before starting the new one (also starts it if it crashed).
-hl.bind(mainMod .. " + CTRL + R",         hl.dsp.exec_cmd("pkill -x waybar; while pgrep -x waybar >/dev/null; do sleep 0.1; done; waybar"))
+-- Also starts it if it crashed and systemd gave up restarting it.
+hl.bind(mainMod .. " + CTRL + R",         hl.dsp.exec_cmd("systemctl --user restart waybar"))
 hl.bind(mainMod .. " + CTRL + E",         hl.dsp.exec_cmd([[printf 'No\nYes - exit Hyprland\n' | fuzzel --dmenu --prompt 'Exit? ' | grep -q '^Yes' && hyprctl dispatch 'hl.dsp.exit()']]))
 hl.bind(mainMod .. " + CTRL + semicolon", hl.dsp.exec_cmd("loginctl lock-session"))
 hl.bind(mainMod .. " + apostrophe",       hl.dsp.exec_cmd("systemctl suspend"))
